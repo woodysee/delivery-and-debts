@@ -1,0 +1,42 @@
+#player1space {
+  
+}
+
+#world {
+  /* 4:3 box for single player */
+  width: 484px;
+  height: 363px;
+  background-color: rgba(255,251,219,1);
+  position: absolute;
+  margin: 30px 30px 30px 30px;
+}
+
+#moped {
+  height: 20px;
+  width: 30px;
+  background-color: rgba(0,87,144,1);
+  position: absolute;
+  top: 50px;
+  left: 25px;
+  border-radius: 0%;
+}
+
+#player-1-infobar {
+  width: 484px;
+  height: 40px;
+  top: 404px;
+  left: 30px;
+  position: absolute;
+  background-color: rgba(110, 107, 102, 1);
+}
+
+#player-1-dayOfTheWeek {
+  background-color: rgba();
+  position: absolute;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  color: rgba(255,251,219,1);
+  font-family: helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
