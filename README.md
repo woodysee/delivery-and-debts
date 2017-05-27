@@ -1,1 +1,0 @@
-# sg-wdi-10-project-1
