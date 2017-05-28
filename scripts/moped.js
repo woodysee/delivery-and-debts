@@ -1,6 +1,7 @@
 /* A Document Ready in jQuery*/
 /* If you plan to use jQuery, have you inserted this just above </body> in your HTML?
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="scripts/moped.js"></script>
 */
 
 $( document ).ready(function() {
@@ -17,7 +18,7 @@ var Moped = function(settings) {
 
     // Settings
     var mopedElement = null;
-    var bullets = [];
+    var xx = 0;
 
     function wall() {
 
@@ -76,6 +77,7 @@ var Moped = function(settings) {
       if(settings.walls){
         wall();
       }
+
     }
 
     function create() {
@@ -87,8 +89,10 @@ var Moped = function(settings) {
       mopedElement = document.getElementById('moped');
       mopedElement.style.top = '100px';
       mopedElement.style.left = '50px';
-      mopedElement.style.height = '20px';
-      mopedElement.style.width = '30px';
+      mopedElement.style.height = '10px';
+      mopedElement.style.width = '15px';
+      mopedElement.takings = 0;
+      mopedElement.lunches = 2;
     };
 
     this.render = function(interactions){
@@ -96,4 +100,5 @@ var Moped = function(settings) {
     }
 
     init();
-} /*End object Moped(settings)*/
+}
+/*End object Moped(settings)*/

@@ -22,10 +22,13 @@ var Game = function() {
     settings.automatic = false;            // The moped will move by itself
     settings.godmode = false;              // Debug mode
 
+
     // Window settings
     var assets = [];                      // All game objects
-    var player = new Moped(settings);     // The player
+    var player = new Moped(settings);           // The player
+    //var restaurant = new Restaurant(settings);  // The restaurant
     assets[0] = player;
+    //assets[1] = restaurant;               // The restaurant
     var frame = 0;                        // Frames since the start of the game
 
     // Interactions

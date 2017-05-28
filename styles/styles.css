@@ -1,19 +1,38 @@
-#player1space {
-  
+#player1-space {
+
+}
+
+#closegame-button {
+  height: 15px;
+  width: 15px;
+  background-color: rgba(194,0,85,1);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 100%;
+  font-family: helvetica, sans-serif;
+  color: rgba(255,251,219,1);
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
 }
 
 #world {
   /* 4:3 box for single player */
   width: 484px;
   height: 363px;
-  background-color: rgba(255,251,219,1);
+  background-color: rgba(255,251,219,0.3);
   position: absolute;
   margin: 30px 30px 30px 30px;
+  border-top: 1px solid rgba(200,184,164,0.3);
+  border-right: 1px solid rgba(200,184,164,0.3);
+  border-bottom: 1px solid rgba(200,184,164,0.3);
+  border-left: 1px solid rgba(200,184,164,0.3);
 }
 
 #moped {
-  height: 20px;
-  width: 30px;
+  height: 10px;
+  width: 15px;
   background-color: rgba(0,87,144,1);
   position: absolute;
   top: 50px;
@@ -21,21 +40,79 @@
   border-radius: 0%;
 }
 
-#player-1-infobar {
-  width: 484px;
+#restaurant {
   height: 40px;
-  top: 404px;
+  width: 40px;
+  background-color: rgba(172,51,89,1);
+  position: absolute;
+  top: 160px;
+  left: 15px;
+  border-radius: 0%;
+}
+
+.class {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  background-color: black;
+}
+
+#player1-infobar {
+  width: 484px;
+  height: 60px;
+  top: 394px;
   left: 30px;
   position: absolute;
   background-color: rgba(110, 107, 102, 1);
 }
 
-#player-1-dayOfTheWeek {
-  background-color: rgba();
+#player1-dayOfTheWeek {
+  background-color: rgba(172, 134, 165, 1);
   position: absolute;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 5px 5px;
+  margin: 4px 4px 4px 4px;
+  padding: 12px 4px 12px 4px;
   color: rgba(255,251,219,1);
+  font-family: helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  top: 1px;
+}
+
+#player1-timer {
+  background-color: rgba(100, 100, 100, 1);
+  position: absolute;
+  margin: 12px 4px 12px 4px;
+  padding: 4px 4px 4px 4px;
+  color: rgba(203,215,63,1);
+  font-family: helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  top: 1px;
+  left: 200px;
+}
+
+#player1-earningstext {
+  background-color: rgba(110, 107, 102, 1);
+  border: 1px 1px 1px 1px black;
+  position: absolute;
+  margin: 12px 4px 12px 4px;
+  padding: 4px 4px 4px 4px;
+  color: rgba(255,251,219,1);
+  font-family: helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  top: 4px;
+  right: 116px;
+}
+
+#player1-earningsbox {
+  background-color: rgba(255,251,219,1);
+  position: absolute;
+  margin: 4px 4px 4px 4px;
+  padding: 12px 4px 12px 4px;
+  color: rgba(110, 107, 102, 1);
+  top: 1px;
+  right: 0px;
   font-family: helvetica, sans-serif;
   font-size: 18px;
   font-weight: bold;

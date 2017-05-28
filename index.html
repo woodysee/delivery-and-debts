@@ -23,18 +23,27 @@
     <!---->
     <!--ALL USER HTML CONTENT SHOULD GO BELOW THIS COMMENT-->
     <!---->
-    <div id="player1space">
+    <div id="player1-space">
       <div id="world">
+        <button id="closegame-button"></button>
+        <div id="restaurant"></div>
         <div id="moped"></div>
-      </div>
-      <div id="player-1-infobar">
-        <div id="player-1-dayOfTheWeek">
-          M O N D A Y
+        <div class="delivery-venue-locations">
+          <div id="deliveryA1"></div>
+          <div id="deliveryA2"></div>
+          <div id="deliveryA3"></div>
         </div>
       </div>
+
+    </div>
+    <div id="player1-infobar">
+        <div id="player1-dayOfTheWeek">WEDNESDAY</div>
+        <div id="player1-timer">02:30</div>
+        <div id="player1-earningstext">Earnings</div>
+        <div id="player1-earningsbox">$ (- 9999999)</div>
     </div>
 
-    <div class="player2space">
+    <div class="player2-space">
     </div>
 
     <!---->
@@ -49,7 +58,8 @@
     <!-- Local JavaScript files below here-->
     <script type="text/javascript" src="scripts/jquery.min.js"></script>
     <script src="scripts/moped.js"></script>
-    <!-- How can JavaScript files -->
+    <script src="scripts/restaurant.js"></script>
+    <script src="scripts/dayTimer.js"></script>
     <script src="scripts/game.js"></script>
 
     <!-- Local JavaScript files above here-->
