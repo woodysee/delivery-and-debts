@@ -50,12 +50,112 @@
   border-radius: 0%;
 }
 
-.class {
-  height: 40px;
-  width: 40px;
+.delivery-venue-locations {
+  height: 360px;
+  width: 450px;
   position: absolute;
-  background-color: black;
+  background-color: rgba(110, 107, 102, 0.05);
+  top: 2px;
+  left: 30px;
 }
+  #deliveryR1 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 10px;
+    left: 0px;
+  }
+
+  #deliveryR2 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 270px;
+    left: 0px;
+  }
+
+  #deliveryA1 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 10px;
+    left: 120px;
+  }
+
+  #deliveryB1 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 10px;
+    left: 240px;
+  }
+
+  #deliveryC1 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 10px;
+    left: 360px;
+  }
+
+  #deliveryA2 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 140px;
+    left: 120px;
+  }
+
+  #deliveryB2 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 140px;
+    left: 240px;
+  }
+
+  #deliveryC2 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 140px;
+    left: 360px;
+  }
+
+  #deliveryA3 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 270px;
+    left: 120px;
+  }
+
+  #deliveryB3 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 270px;
+    left: 240px;
+  }
+
+  #deliveryC3 {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    background-color: rgba(110, 107, 102, 0.1);
+    top: 270px;
+    left: 360px;
+  }
 
 #player1-infobar {
   width: 484px;

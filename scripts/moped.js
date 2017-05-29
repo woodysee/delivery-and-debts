@@ -5,7 +5,7 @@
 */
 
 $( document ).ready(function() {
-    console.log( "This page is linked to moped.js. This line was written with jQuery." );
+    console.log( "index.html linked to moped.js. Printed with jQuery." );
 });
 
 /**/
@@ -87,7 +87,7 @@ var Moped = function(settings) {
     function init(){
       // create();
       mopedElement = document.getElementById('moped');
-      mopedElement.style.top = '100px';
+      mopedElement.style.top = '175px';
       mopedElement.style.left = '50px';
       mopedElement.style.height = '10px';
       mopedElement.style.width = '15px';

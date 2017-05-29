@@ -5,7 +5,7 @@
 */
 
 $( document ).ready(function() {
-    console.log( "This page is linked to restaurant.js. This line was written with jQuery." );
+    console.log( "index.html linked to restaurant.js. Printed with jQuery." );
 });
 
 /**/
@@ -27,10 +27,13 @@ var Restaurant = function(settings){
       // Moped has 0 lunches = add 2 lunches;
   function mopedCollectsLunches() {
     /*Conditional*/
+    return
   }
 
   // Moped removes all takings
     // 5% of takings go into Earnings;
+
+    var addToEarnings = 0;
 
     function mopedDepositsTakings() {
       /*Conditional*/

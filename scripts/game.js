@@ -4,7 +4,7 @@
 */
 
 $( document ).ready(function() {
-    console.log( "This page is linked to game.js. This line was written with jQuery." );
+    console.log( "index.html linked to game.js. Printed with jQuery." );
 });
 
 /**/
