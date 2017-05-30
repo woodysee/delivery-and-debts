@@ -15,18 +15,20 @@ $( document ).ready(function() {
 /* ALL CODE SHOULD GO BELOW HERE */
 
 /*Sitepoint JS Countdown Timer*/
+//Juliana's Timer (scrapped because it was tagged to )
+//El's Countdown Timer: counts down 60 seconds on page refresh
 
-//Juliana's Timer: counts down 60 seconds on page refresh
-var seconds_left = 60; //settings.dayLength;
-var interval = setInterval(function() {
-    document.getElementById('player1-timer').innerHTML = "00:" + --seconds_left;
-    if(seconds_left < 10)
-    {
-      document.getElementById('player1-timer').innerHTML = "00:0" + --seconds_left;
-    }
-    if (seconds_left <= 0)
-    {
-          document.getElementById('player1-timer').innerHTML = 'NEXT DAY';
-          clearInterval(interval);
-    }
-}, 1000);
+function timer(duration, secondsPassed){
+  duration = duration - Math.floor(secondsPassed);
+  document.getElementById('player1-timer').innerHTML = "00:" + duration;
+  if (duration >= 60) {
+    document.getElementById('player1-timer').innerHTML = "01:00";
+  }; //MAKE THIS BETTER! INFLEXIBLE CODE. WHAT HAPPENS IF THERE IS MORE THAN 1 MIN?
+  if(duration < 10) {
+    document.getElementById('player1-timer').innerHTML = "00:0" + duration;
+  };
+  if(duration <= 0) {
+    document.getElementById('player1-timer').innerHTML = "NEXT DAY";
+  };
+};
+// In this.render function on game.js, put timer(settings.dayLength, secondsPassed); after frame++

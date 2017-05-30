@@ -55,52 +55,64 @@ var Moped = function(settings) {
       mopedElement.style.left = (w - parseInt(mopedElement.style.width)) + 'px';
     }
   }
-  /* > Cannot pass though Moped */
+  /*  > Cannot pass though Moped */
   /*  > Collision detection  */
   /*  > Cannot pass through another Debt Ball */
   /*  > Passes over the Restaurant */
   /*  > Passes over the Delivery Venues */
 
-  // function clipRestaurant() {
-  //   var Mx_right = parseInt(mopedElement.style.left)  + parseInt(mopedElement.style.width);
-  //   var Mx_left = parseInt(mopedElement.style.left);
-  //   var My_top = parseInt(mopedElement.style.top);
-  //   var My_bottom = parseInt(mopedElement.style.top) + parseInt(mopedElement.style.height);
-  //
-  //   var restaurant = document.getElementById("restaurant");
-  //   var mopedRect = mopedElement.getBoundingClientRect();
-  //
-  //   var Rx_left = parseInt(restaurant.style.left);
-  //   var Rx_right = parseInt(restaurant.style.left + restaurant.style.width);
+  // Function for clipTwoObjects here
 
-    //Moped collides from right of x-axis: (Rx_left + Rw < Mx_left)
-    //Moped collides from left of x-axis: (Rx_left > Mx.right)
-    //Moped is bigger than the Restaurant: (Mw < Rx.left)
+  function clipSmallAndBigRects(smallRect,bigRect) {
 
-    // var rightCollideX = (Rx_left + restaurant.style.width) <= Mx_left;
-    // var leftCollideX = Rx_left >= Mx_right;
-    // var thinLeftX = mopedElement.style.width <= Rx_left;
-    //
-    // if (rightCollideX && (leftCollideX && thinLeftX)) {
-    //   Mx_left = Rx_right;
-    // } else if (leftCollideX && thinLeftX) {
-    //   Mx_left = Rx_left - mopedElement.style.width;
-    // } else if (thinLeftX) {
-    //   Mx_left = 0;
-    // }
-    //
-    // if (My_bottom >= Ry_top) {
-    //   My_top = Ry_top - mopedElement.style.height;
-    // }
-    //
-    // if (Ry_bottom <= My_top) {
-    //   My_top = Ry_top + restaurant.style.height;
-    // }
+    //defining 2 elements
 
-    //End of X wall to keep Moped Out!
+      var smallElement = document.getElementById(smallRect);
+      var bigElement = document.getElementById(bigRect);
 
-    //}
+      var ax = parseInt(smallElement.style.left);
+      var ay = parseInt(smallElement.style.top);
+      var bx = parseInt(smallElement.style.left) + parseInt(smallElement.style.width);
+      var by = parseInt(smallElement.style.top);
+      var cx = parseInt(smallElement.style.left) + parseInt(smallElement.style.width);
+      var cy = parseInt(smallElement.style.top) + parseInt(smallElement.style.height);
+      var dx = parseInt(smallElement.style.left);
+      var dy = parseInt(smallElement.style.top) + parseInt(smallElement.style.height);
+      var Ax = parseInt(bigElement.style.left);
+      var Ay = parseInt(bigElement.style.top);
+      var Bx = parseInt(bigElement.style.left) + parseInt(bigElement.style.width);
+      var By = parseInt(bigElement.style.top);
+      var Cx = parseInt(bigElement.style.left) + parseInt(bigElement.style.width);
+      var Cy = parseInt(bigElement.style.top) + parseInt(bigElement.style.height);
+      var Dx = parseInt(bigElement.style.left);
+      var Dy = parseInt(bigElement.style.top) + parseInt(bigElement.style.height);
 
+      //SmallRect incoming from the North
+      if ((Dy > dy) && (dy > Ay) && (Ax < ax) && (bx < Bx)) {
+        dy = Ay;
+        //console.log("North");
+      };
+
+      //SmallRect incoming from the East
+      if ((Ax < ax) && (ax < Bx) && (By < ay) && (dy < Cy)) {
+        ax = Bx;
+        console.log("East");
+      };
+
+      //SmallRec incoming from the South
+      if ((By < by) && (by < Cy) && (cx < Cx) && (Dx < dx)) {
+        by = Cy;
+        console.log("South");
+      };
+
+      //SmallRec incoming from the West
+      if ((cx < Cx) && (Dx < cx) && (dy < Dy) && (Ay < ay)) {
+        Dx = cx;
+        console.log("West");
+      };
+  };
+
+  //Function for debtBallWalls here
 
   // Move the moped around manually
 
@@ -126,6 +138,10 @@ var Moped = function(settings) {
       wall();
     };
 
+    if(settings.noclip === false){
+      clipSmallAndBigRects("moped","restaurant");
+    };
+
   };
 
   function create() {
@@ -136,7 +152,7 @@ var Moped = function(settings) {
     // create();
     mopedElement = document.getElementById('moped');
     mopedElement.style.top = '175px';
-    mopedElement.style.left = '50px';
+    mopedElement.style.left = '60px';
     mopedElement.style.height = '15px';
     mopedElement.style.width = '15px';
     mopedElement.takings = 0;

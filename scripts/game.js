@@ -18,21 +18,21 @@ var Game = function() {
     // Game settings
     var settings = {};                     // Contains all game settings
     settings.mopedSpeed = 2;               // The speed of the moped
-    settings.walls = true;                 // The moped can not go outside the screen
+    settings.walls = true;                 // The moped can roam outside the world
+    settings.noclip = false;               // The moped can pass through all world impassable objects
     settings.debtBallSpeed = 2;            // The debt Balls speed
     settings.automatic = false;            // The debt Balls will move by itself
-    //settings.dayLength = 60;             // No. of seconds in a day
+    settings.dayLength = 60;/*seconds*/    // Duration of a day
     settings.godmode = false;              // Debug mode (remove debtObjects)
-
 
     //new object of an enemy, start_position, direction, every time, if it is 0 go minus, velocity
 
     // Window settings
     var assets = [];                              // All game objects
     var player = new Moped(settings);             // The player
-    //var restaurant = new Restaurant(settings);  // The restaurant
+    var restaurant = new Restaurant(settings);    // The restaurant
     assets[0] = player;
-    assets[1] = new Restaurant(); // The restaurant
+    assets[1] = new Restaurant();         // The restaurant
     var frame = 0;                        // Frames since the start of the game
     var secondsPassed = 0;
 
@@ -103,11 +103,13 @@ var Game = function() {
     this.render = function(){ // Change to this.render
       for(var i=0; i < assets.length; i++){
         assets[i].render(interactions);
-      }
-      secondsPassed = frame / 60;
+      };
+      secondsPassed = frame / 60; //no. of seconds passed per frame
       frame++;
-      console.log(frame, secondsPassed);
-    }
+      //console.log(frame, secondsPassed);
+      // Don't put a "return secondsPassed" here! If you want the timer to work... (30 May 2017, 11:27);
+      timer(settings.dayLength, secondsPassed); //See dayTimer.js
+    };
 
     var self = this; // Add this line
     window.requestAnimFrame = (function(){

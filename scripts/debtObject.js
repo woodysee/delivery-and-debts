@@ -27,7 +27,6 @@ var debtObject = function(settings) {
       var y_top = parseInt(debtElement.style.top);
       var y_bottom = parseInt(debtElement.style.top) + parseInt(debtElement.style.height);
 
-
       var worldBox = document.getElementById("world");
       var mopedRect = debtElement.getBoundingClientRect();
       var w = parseInt(worldBox.clientWidth);
@@ -80,7 +79,7 @@ var debtObject = function(settings) {
     }
 
     function create() {
-        // Create the object asset
+        // Create the object asset;
     }
 
     function init(){
