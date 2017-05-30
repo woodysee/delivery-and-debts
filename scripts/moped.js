@@ -87,27 +87,31 @@ var Moped = function(settings) {
       var Dx = parseInt(bigElement.style.left);
       var Dy = parseInt(bigElement.style.top) + parseInt(bigElement.style.height);
 
+      //1 corner check - to improve
       //SmallRect incoming from the North
-      if ((Dy > dy) && (dy > Ay) && (Ax < ax) && (bx < Bx)) {
-        dy = Ay;
-        //console.log("North");
+        /*With help from Alex and Geng. Thanks to El for the "finishing touch", saved me hours of debugging...)*/
+      if ((Dy >= dy) && (dy >= Ay) && (Ax <= ax) && (bx <= Bx)) {
+        smallElement.style.top = (Ay - parseInt(smallElement.style.height)) + "px";
+        console.log("North");
       };
 
       //SmallRect incoming from the East
-      if ((Ax < ax) && (ax < Bx) && (By < ay) && (dy < Cy)) {
-        ax = Bx;
+      if ((Ax <= ax) && (ax <= Bx) && (By <= ay) && (dy <= Cy)) {
+        smallElement.style.left = Bx + "px";
+        //ax = Bx + "px";
         console.log("East");
       };
 
-      //SmallRec incoming from the South
-      if ((By < by) && (by < Cy) && (cx < Cx) && (Dx < dx)) {
-        by = Cy;
+      //SmallRect incoming from the South
+      if ((By <= by) && (by <= Cy) && (cx <= Cx) && (Dx <= dx)) {
+        smallElement.style.top = Cy + "px";
         console.log("South");
       };
 
-      //SmallRec incoming from the West
-      if ((cx < Cx) && (Dx < cx) && (dy < Dy) && (Ay < ay)) {
-        Dx = cx;
+      //SmallRect incoming from the West
+      if ((cx <= Cx) && (Dx <= cx) && (dy <= Dy) && (Ay <= ay)) {
+        //cx = Dx;
+        smallElement.style.left = parseInt(bigElement.style.left) - parseInt(smallElement.style.width) + "px";
         console.log("West");
       };
   };
