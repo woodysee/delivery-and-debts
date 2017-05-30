@@ -14,7 +14,7 @@ $( document ).ready(function() {
 
 /* ALL CODE SHOULD GO BELOW HERE */
 
-var Restaurant = function(settings){
+var Restaurant = function(){
 
   //Settings
   var xx = [];
@@ -22,13 +22,14 @@ var Restaurant = function(settings){
   // Adding lunches to restaurant
 
     // Moped arrives at restaurant,
+
+    function mopedCollectsLunches() {
+      /*Conditional*/
       // Moped has 2 lunches = do nothing;
       // Moped has 1 lunch = add 1 lunch;
       // Moped has 0 lunches = add 2 lunches;
-  function mopedCollectsLunches() {
-    /*Conditional*/
-    return
-  }
+      return
+    }
 
   // Moped removes all takings
     // 5% of takings go into Earnings;
@@ -37,7 +38,7 @@ var Restaurant = function(settings){
 
     function mopedDepositsTakings() {
       /*Conditional*/
-      var takings = paseInt(mopedElement.takings);
+      var takings = parseInt(mopedElement.takings);
       return addToEarnings;
     }
 
@@ -48,6 +49,9 @@ var Restaurant = function(settings){
       restaurantElement.style.left = '15px';
       restaurantElement.style.height = '40px';
       restaurantElement.style.width = '40px';
+    };
+
+    this.render = function(interactions){
     };
 
     init();

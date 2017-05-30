@@ -50,7 +50,7 @@ Objects
 
     - Countdown timer
     > Initially, a countdown timer with a random duration between 3 and 6 seconds;
-    > When Scooter is at restaurant, generates a random timer between 3 and 6 seconds;
+    > When Moped is at restaurant, generates a random timer between 3 and 6 seconds;
     > If Moped arrives...
       > ...on time, full takings: $30;
       > ...late, half takings: $15;
@@ -63,18 +63,18 @@ Objects
     > Randomly generates a new time
 
   - Debt Ball
-    > A Debt Ball is an object which removes all takings from the Scooter. In return, it becomes smaller. The player can avoid going through the Debts. But as the days goes by, it will become bigger until the player has no choice but to collide with it to make it smaller.
+    > A Debt Ball is an object which removes all takings from the Moped. In return, it becomes smaller. The player can avoid going through the Debts. But as the days goes by, it will become bigger until the player has no choice but to collide with it to make it smaller.
 
     - Debt Size
     > 150% bigger every day if it does not hit;
-    > If Scooter runs into a Debt...
+    > If Moped runs into a Debt...
       > ...it will shrink by 80% the next day
       > ...and player will lose all his takings so far.
 
     - Collision
-    > Cannot pass though Scooter
+    > Cannot pass though Moped
     > Cannot pass through 4 walls of the World
-    > Cannot pass through another Debt object
+    > Cannot pass through another Debt Ball
     > Passes over the Restaurant
     > Passes over the Delivery Venues
 

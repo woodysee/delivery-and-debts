@@ -16,20 +16,25 @@ $( document ).ready(function() {
 var Game = function() {
 
     // Game settings
-    var settings = {};                     // Containes all game settings
+    var settings = {};                     // Contains all game settings
     settings.mopedSpeed = 2;               // The speed of the moped
     settings.walls = true;                 // The moped can not go outside the screen
-    settings.automatic = false;            // The moped will move by itself
-    settings.godmode = false;              // Debug mode
+    settings.debtBallSpeed = 2;            // The debt Balls speed
+    settings.automatic = false;            // The debt Balls will move by itself
+    //settings.dayLength = 60;             // No. of seconds in a day
+    settings.godmode = false;              // Debug mode (remove debtObjects)
 
+
+    //new object of an enemy, start_position, direction, every time, if it is 0 go minus, velocity
 
     // Window settings
-    var assets = [];                      // All game objects
-    var player = new Moped(settings);           // The player
+    var assets = [];                              // All game objects
+    var player = new Moped(settings);             // The player
     //var restaurant = new Restaurant(settings);  // The restaurant
     assets[0] = player;
-    //assets[1] = restaurant;               // The restaurant
+    assets[1] = new Restaurant(); // The restaurant
     var frame = 0;                        // Frames since the start of the game
+    var secondsPassed = 0;
 
     // Interactions
     var interactions = {};
@@ -37,7 +42,7 @@ var Game = function() {
     interactions.down = false;            // Down arrow key pressed
     interactions.left = false;            // Left arrow key pressed
     interactions.right = false;           // Right arrow ket pressed
-    interactions.space = false;           // Speace key pressed
+    interactions.space = false;           // Space key pressed
 
     // Setup event listeners
     function setupEvents() {
@@ -85,6 +90,8 @@ var Game = function() {
         }
       });
 
+      //Add more event listeners
+
     }
 
     // Startup the game
@@ -93,13 +100,16 @@ var Game = function() {
     }
 
     // The render function. It will be called 60/sec
-    function render(){
-
+    this.render = function(){ // Change to this.render
       for(var i=0; i < assets.length; i++){
         assets[i].render(interactions);
       }
+      secondsPassed = frame / 60;
+      frame++;
+      console.log(frame, secondsPassed);
     }
 
+    var self = this; // Add this line
     window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       ||
               window.webkitRequestAnimationFrame ||
@@ -109,10 +119,9 @@ var Game = function() {
               };
             })();
 
-
             (function animloop(){
               requestAnimFrame(animloop);
-              render();
+              self.render(); // add self before render
             })();
 
             init();

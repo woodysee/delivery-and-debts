@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Website Project</title>
+    <title>Deliveries & Debts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Jens's Boilerplate Project: Bootstrap core CSS -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -25,7 +25,9 @@
     <!---->
     <div id="player1-space">
       <div id="world">
-        <button id="closegame-button"></button>
+        <button id="closegame-button">
+          <div id="x-text">X</div>
+        </button>
         <div id="restaurant"></div>
         <div id="moped"></div>
         <div class="delivery-venue-locations">
@@ -40,6 +42,19 @@
           <div id="deliveryA3"></div>
           <div id="deliveryB3"></div>
           <div id="deliveryC3"></div>
+        </div>
+        <!--Potential spawn points for debt objects-->
+        <div id="debtPositionA1"></div>
+        <div id="debtPositionB1"></div>
+        <div id="debtPositionC1"></div>
+        <div id="debtPositionA2"></div>
+        <div id="debtPositionB2"></div>
+        <div id="debtPositionC2"></div>
+        <!--Debt Objects-->
+        <div class="debtObjects">
+          <div class="debtObject" id="d1"></div>
+          <div class="debtObject" id="d2"></div>
+          <div class="debtObject" id="d3"></div>
         </div>
       </div>
 
@@ -62,12 +77,13 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- Jens's Boilerplate Project: Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-    <!-- Local JavaScript files below here-->
     <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <!-- Local JavaScript files below here-->
     <script src="scripts/moped.js"></script>
+    <script src="scripts/debtObject.js"></script>
     <script src="scripts/restaurant.js"></script>
     <script src="scripts/dayTimer.js"></script>
+    <script src="scripts/dayOfTheWeek.js"></script>
     <script src="scripts/game.js"></script>
 
     <!-- Local JavaScript files above here-->

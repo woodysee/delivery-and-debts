@@ -16,39 +16,17 @@ $( document ).ready(function() {
 
 /*Sitepoint JS Countdown Timer*/
 
-var duration = ;
-var now = new Date();
-var deadline = now + duration;
-
-function getTimeRemaining(endtime){
-  var t = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor( (t/1000) % 60 );
-  var minutes = Math.floor( (t/1000/60) % 60 );
-  var hours = Math.floor( (t/(1000*60*60)) % 24 );
-  var days = Math.floor( t/(1000*60*60*24) );
-  return {
-    'total': t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
-
-getTimeRemaining(deadline).minutes;
-
-function initialiseClock(id, endtime){
-  var clock = document.getElementById(id);
-  var timeinterval = setInterval(function(){
-    var t = getTimeRemaining(endtime);
-    clock.innerHTML = 'days: ' + t.days + '<br>' +
-                      'hours: '+ t.hours + '<br>' +
-                      'minutes: ' + t.minutes + '<br>' +
-                      'seconds: ' + t.seconds;
-    if(t.total<=0){
-      clearInterval(timeinterval);
+//Juliana's Timer: counts down 60 seconds on page refresh
+var seconds_left = 60; //settings.dayLength;
+var interval = setInterval(function() {
+    document.getElementById('player1-timer').innerHTML = "00:" + --seconds_left;
+    if(seconds_left < 10)
+    {
+      document.getElementById('player1-timer').innerHTML = "00:0" + --seconds_left;
     }
-  },1000);
-};
-
-initialiseClock('player1-timer', deadline);
+    if (seconds_left <= 0)
+    {
+          document.getElementById('player1-timer').innerHTML = 'NEXT DAY';
+          clearInterval(interval);
+    }
+}, 1000);
