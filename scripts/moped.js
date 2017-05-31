@@ -95,7 +95,7 @@ var Moped = function(settings) {
         smallElement.style.top = (Ay - parseInt(smallElement.style.height)) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
         console.log("Moped hits Obj: North");
-        if (moped.lunches <= 2) {
+        if (mopedElement.lunches <= 2 /*only for Restaurant*/) {
           moped.lunches = 2;
         };
       };
@@ -106,8 +106,8 @@ var Moped = function(settings) {
         //ax = Bx + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
         console.log("Moped hits Obj: East");
-        if (moped.lunches <= 2) {
-          moped.lunches = 2;
+        if (mopedElement.lunches <= 2 /*only for Restaurant*/) {
+          mopedElement.lunches = 2;
         };
       };
 
@@ -116,8 +116,8 @@ var Moped = function(settings) {
         smallElement.style.top = Cy + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
         console.log("Moped hits Obj: South");
-        if (moped.lunches <= 2) {
-          moped.lunches = 2;
+        if (mopedElement.lunches <= 2) {
+          mopedElement.lunches = 2;
         };
       };
 
@@ -127,8 +127,8 @@ var Moped = function(settings) {
         smallElement.style.left = parseInt(bigElement.style.left) - parseInt(smallElement.style.width) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
         console.log("Moped hits Obj: West");
-        if (moped.lunches <= 2) {
-          moped.lunches = 2;
+        if (mopedElement.lunches <= 2) {
+          mopedElement.lunches = 2;
         };
       };
   };
@@ -161,7 +161,7 @@ var Moped = function(settings) {
       clipSmallAndBigRects("moped","restaurant");
       clipSmallAndBigRects("moped","deliveryA1");
       clipSmallAndBigRects("moped","deliveryB2");
-      clipSmallAndBigRects("moped","deliveryB3"); //Ask Jens why cannot pass only 1 object
+      clipSmallAndBigRects("moped","deliveryB3"); //Ask Jens why cannot pass only 1 object (need to create? Only in line styling works...)
     };
   };
 

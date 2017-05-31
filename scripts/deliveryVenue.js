@@ -14,7 +14,7 @@ $( document ).ready(function() {
 
 /* ALL CODE SHOULD GO BELOW HERE */
 
-var deliveryVenue = function(){
+var DeliveryVenue = function(){
 
 };
 
