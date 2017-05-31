@@ -45,31 +45,60 @@
 }
 
 #lunchesOnHandTextBox {
-  height: 15px;
+  height: 40px;
   width: 60px;
   margin: 0px 0px 0px 0px;
   padding: 2px 2px 2px 2px;
   background-color: rgba(110, 107, 102, 0.4);
   position: absolute;
-  top: 5px;
+  top: -20px;
   left: 15px;
 }
 
 #lunchesOnHandTextBox span {
-  font-size: 10px;
+  font-size: 8px;
   color: rgba(255,251,219,1);
   padding: 1px 1px 1px 1px;
   position: absolute;
   top: -1px;
 }
 
-#lunchesOnHandTextBox span:first-child {
-  left: 1px;
-}
+  #lunchesOnHandTextBox span:first-child {
+    left: 1px;
+  }
 
-#lunchesOnHandTextBox span:nth-child(2) {
-  left: 51px;
+  #lunchesOnHandTextBox span:nth-child(2) {
+    left: 48px;
+    font-size: 15px;
+    height: 30px;
+    top: -10px;
+  }
+
+#cashOnHandTextBox {
+  height: 15px;
+  width: 60px;
+  margin: 0px 0px 0px 0px;
+  padding: 2px 2px 2px 2px;
+  background-color: rgba(84, 135, 107, 1);
+  position: absolute;
+  top: 20px;
+  left: 15px;
 }
+  #cashOnHandTextBox span {
+    font-size: 10px;
+    color: rgba(255,251,219,1);
+    padding: 1px 1px 1px 1px;
+    position: absolute;
+    top: -1px;
+  }
+
+  #cashOnHandTextBox span:first-child {
+    left: 1px;
+  }
+
+  #cashOnHandTextBox span:nth-child(2) {
+    left: 51px;
+  }
 
 #restaurant {
   height: 40px;

@@ -21,8 +21,6 @@ var Moped = function(settings) {
   var takings = 0;
   var lunches = 0;
 
-    //Algorithm confirm('msg');urtesy of https://yal.cc/rectangle-circle-intersection-test/
-
   function wall() {
 
     var x_right = parseInt(mopedElement.style.left)  + parseInt(mopedElement.style.width);
@@ -55,14 +53,28 @@ var Moped = function(settings) {
     if (x_right > w){
       mopedElement.style.left = (w - parseInt(mopedElement.style.width)) + 'px';
     }
-  }
-  /*  > Cannot pass though Moped */
-  /*  > Collision detection  */
-  /*  > Cannot pass through another Debt Ball */
-  /*  > Passes over the Restaurant */
-  /*  > Passes over the Delivery Venues */
+  };
 
   // Function for clipTwoObjects here
+
+  //Contextual conditional for restaurant: this allows the moped to refill lunches;
+  function refillLunches() {
+    if (mopedElement.lunches <= 2) {
+      mopedElement.lunches = 2;
+      var lunchCount = document.getElementById("lunchCount");
+      lunchCount.innerHTML = mopedElement.lunches;
+    };
+  };
+
+  //Contextual conditional for deliveryVenues: this allows the moped to deliver lunches on hand;
+
+  function deliverLunch() {
+    if (mopedElement.lunches > 0) {
+      mopedElement.takings = mopedElement.takings - 1;
+      var cashCount = document.getElementById("cashCount");
+      cashCount.innerHTML = mopedElement.takings;
+    };
+  };
 
   function clipSmallAndBigRects(smallRect,bigRect) {
 
@@ -88,16 +100,22 @@ var Moped = function(settings) {
       var Dx = parseInt(bigElement.style.left);
       var Dy = parseInt(bigElement.style.top) + parseInt(bigElement.style.height);
 
-      //1 corner check - to improve?
+      //Wierd corner jumps - to improve code?
       //SmallRect incoming from the North
-        /*With help from Alex and Geng. Thanks to El for the "finishing touch", saved me hours of debugging...)*/
+        /*Made with some help from Alex and Geng. And thanks to El for the "finishing touch" on Tuesday, saved me hours of debugging...)*/
       if ((Dy >= dy) && (dy >= Ay) && (Ax <= ax) && (bx <= Bx)) {
         smallElement.style.top = (Ay - parseInt(smallElement.style.height)) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped hits Obj: North");
-        if (moped.lunches <= 2) {
-          moped.lunches = 2;
+        console.log("Moped has hit NORTH of " + bigElement.id + ", an impassable object.");
+        //Contextual consequences of hitting the object below
+        if (bigElement.id == "restaurant") {
+          refillLunches();
         };
+        /**/
+        if (bigElement.class == "delivery-venue") {
+          deliverLunch();
+        }
+        //Contextual consequences of hitting the object above
       };
 
       //SmallRect incoming from the East
@@ -105,20 +123,33 @@ var Moped = function(settings) {
         smallElement.style.left = Bx + "px";
         //ax = Bx + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped hits Obj: East");
-        if (moped.lunches <= 2) {
-          moped.lunches = 2;
+        console.log("Moped has hit EAST of " + bigElement.id + ", an impassable object.");
+
+        //Contextual consequences of hitting the object below
+        if (bigElement.id == "restaurant") {
+          refillLunches();
         };
+        /**/
+        if (bigElement.class == "delivery-venue") {
+          deliverLunch();
+        }
+        //Contextual consequences of hitting the object above
       };
 
       //SmallRect incoming from the South
       if ((By <= by) && (by <= Cy) && (cx <= Cx) && (Dx <= dx)) {
         smallElement.style.top = Cy + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped hits Obj: South");
-        if (moped.lunches <= 2) {
-          moped.lunches = 2;
+        console.log("Moped has hit SOUTH of " + bigElement.id + ", an impassable object.");
+        //Contextual consequences of hitting the object below
+        if (bigElement.id == "restaurant") {
+          refillLunches();
         };
+        /**/
+        if (bigElement.class == "delivery-venue") {
+          deliverLunch();
+        }
+        //Contextual consequences of hitting the object above
       };
 
       //SmallRect incoming from the West
@@ -126,10 +157,16 @@ var Moped = function(settings) {
         //cx = Dx;
         smallElement.style.left = parseInt(bigElement.style.left) - parseInt(smallElement.style.width) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped hits Obj: West");
-        if (moped.lunches <= 2) {
-          moped.lunches = 2;
+        console.log("Moped has hit WEST of " + bigElement.id + ", an impassable object.");
+        //Contextual consequences of hitting the object below
+        if (bigElement.id == "restaurant") {
+          refillLunches();
         };
+        /**/
+        if (bigElement.class == "delivery-venue") {
+          deliverLunch();
+        }
+        //Contextual consequences of hitting the object above
       };
   };
 
@@ -158,10 +195,16 @@ var Moped = function(settings) {
     };
 
     if(settings.noclip === false){
+      /*  > Cannot pass though Moped */
+      /*  > Collision detection  */
+      /*  > Cannot pass through another Debt Ball */
+      /*  > Passes over the Restaurant */
+      /*  > Passes over the Delivery Venues */
       clipSmallAndBigRects("moped","restaurant");
       clipSmallAndBigRects("moped","deliveryA1");
       clipSmallAndBigRects("moped","deliveryB2");
-      clipSmallAndBigRects("moped","deliveryB3"); //Ask Jens why cannot pass only 1 object
+      clipSmallAndBigRects("moped","deliveryB3");
+      // WIP: these need to be created with create() in object scripts.
     };
   };
 

@@ -30,18 +30,15 @@
       <div id="world">
         <div id="restaurant"></div>
         <div id="moped">
-          <div id="lunchesOnHandTextBox">
-            <span>Lunches:</span><span>2</span>
-          </div>
         </div>
         <div class="delivery-venue-locations">
           <div id="deliveryR1"></div>
           <div id="deliveryR2"></div>
-          <div id="deliveryA1" style="height: 60px; width: 40px; position: absolute; background-color: rgba(110, 107, 102, 0.1); top: 10px; left: 150px;">
-            <div id="deliveryA">
+          <div id="deliveryA1" style="height: 60px; width: 40px; top: 10px; left: 150px;">
+            <div class="delivery-venue" id="deliveryA">
               OFFICE<br><br><br /><br />
             <span id="deliveryA-timer">
-              00:05
+              00:00
             </span>
             </div>
           </div>
@@ -49,20 +46,20 @@
           <div id="deliveryC1"></div>
           <div id="deliveryA2"></div>
           <div id="deliveryB2" style="height: 60px; width: 40px; top: 140px; left: 270px;"><!--Inline styling necessary for the -->
-            <div id="deliveryB">
+            <div class="delivery-venue" id="deliveryB">
               OFFICE<br><br><br /><br />
             <span id="deliveryB-timer">
-              00:03
+              00:00
             </span>
             </div>
           </div>
           <div id="deliveryC2"></div>
           <div id="deliveryA3"></div>
           <div id="deliveryB3" style="height: 60px; width: 40px; top: 270px; left: 270px;">
-            <div id="deliveryC">
+            <div class="delivery-venue" id="deliveryC">
               OFFICE<br><br><br /><br />
             <span id="deliveryC-timer">
-              00:06
+              00:00
             </span>
             </div>
           </div>
@@ -87,6 +84,12 @@
     <div id="player1-infobar">
         <div id="player1-dayOfTheWeek">WEDNESDAY</div>
         <div id="player1-timer"></div>
+        <div id="lunchesOnHandTextBox">
+          <span>Lunches:</span><span id="lunchCount">0</span>
+        </div>
+        <div id="cashOnHandTextBox">
+          <span>Takings: $</span><span id="cashCount">0</span>
+        </div>
         <div id="player1-earningstext">Earnings</div>
         <div id="player1-earningsbox">$ - 9999999</div>
     </div>

@@ -30,7 +30,6 @@ var Game = function() {
     // Window settings
     var assets = [];                              // All game objects
     var player = new Moped(settings);             // The player
-    var restaurant = new Restaurant(settings);    // The restaurant
     assets[0] = player;
     assets[1] = new Restaurant();         // The restaurant
     var frame = 0;                        // Frames since the start of the game
@@ -101,6 +100,7 @@ var Game = function() {
     // Startup the game
     function init(){
       setupEvents();
+      /*create the deliveryVenues here*/
     }
 
     // The render function. It will be called 60/sec
@@ -117,6 +117,8 @@ var Game = function() {
       timerD1(randomDuration.d1, secondsPassed);
       timerD2(randomDuration.d2, secondsPassed);
       timerD3(randomDuration.d3, secondsPassed);
+      // if (/*close button pressed*/) {
+      // }
     };
 
     var self = this; // Add this line
