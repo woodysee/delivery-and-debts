@@ -43,6 +43,11 @@ function timerD1(duration, secondsPassed){
   };
 };
 
+var randomDuration = {}; //called in the render loop in game.js
+randomDuration.d1 = Math.floor(Math.random()*10)+3;
+randomDuration.d2 = Math.floor(Math.random()*10)+3;
+randomDuration.d3 = Math.floor(Math.random()*10)+3;
+
 function timerD2(duration, secondsPassed){
   duration = duration - Math.floor(secondsPassed);
   document.getElementById('deliveryB-timer').innerHTML = "00:" + duration;

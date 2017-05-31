@@ -97,7 +97,7 @@ var Game = function() {
       });
 
       //Add more event listeners
-
+      document.addEventListener(/**/, function(event){
     }
 
     // Startup the game
@@ -116,9 +116,9 @@ var Game = function() {
       // Don't put a "return secondsPassed" here! If you want the timer to work... (30 May 2017, 11:27);
       timer(settings.dayLength, secondsPassed); //See dayTimer.js
       //timers for individual deliveryVenues. May nest it inside function later;
-      timerD1(8, secondsPassed);
-      timerD2(10, secondsPassed);
-      timerD3(6, secondsPassed);
+      timerD1(randomDuration.d1, secondsPassed);
+      timerD2(randomDuration.d2, secondsPassed);
+      timerD3(randomDuration.d3, secondsPassed);
     };
 
     var self = this; // Add this line

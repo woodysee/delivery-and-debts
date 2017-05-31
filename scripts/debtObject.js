@@ -85,19 +85,19 @@ var debtObject = function(settings) {
 
     function automatic(interactionsDebtObject){
 
-      if(interactions.up){
+      if(interactionsDebtObject.up){
         debtElement.style.top = parseInt(debtElement.style.top)-settings.debtBallSpeed+"px";
       }
 
-      if(interactions.down){
+      if(interactionsDebtObject.down){
         debtElement.style.top = parseInt(debtElement.style.top)+settings.debtBallSpeed+"px";
       }
 
-      if(interactions.left){
+      if(interactionsDebtObject.left){
         debtElement.style.left = parseInt(debtElement.style.left)-settings.debtBallSpeed+"px";
       }
 
-      if(interactions.right){
+      if(interactionsDebtObject.right){
         debtElement.style.left = parseInt(debtElement.style.left)+settings.debtBallSpeed+"px";
       }
 
@@ -105,7 +105,7 @@ var debtObject = function(settings) {
         wall();
       }
 
-      clipTwoCircles("d1","d2"); //WIP, not tested
+      clipTwoCircles("d1","d2"); //WIP, not tested. Focus on automatic movement first.
     };
 
     function create() {

@@ -15,7 +15,7 @@ $( document ).ready(function() {
 /* ALL CODE SHOULD GO BELOW HERE */
 
 /*Sitepoint JS Countdown Timer*/
-//Juliana's Timer (scrapped because it was tagged to )
+//Juliana's Timer (scrapped because it was tagged to computer clock instead of frame rate)
 //El's Countdown Timer: counts down 60 seconds on page refresh
 
 function timer(duration, secondsPassed){
@@ -31,4 +31,4 @@ function timer(duration, secondsPassed){
     document.getElementById('player1-timer').innerHTML = "NEXT DAY";
   };
 };
-// In this.render function on game.js, put timer(settings.dayLength, secondsPassed); after frame++
+// In this.render function on game.js, put timer(settings.dayLength, secondsPassed); after frame++;
