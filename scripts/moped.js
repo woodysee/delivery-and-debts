@@ -88,14 +88,14 @@ var Moped = function(settings) {
       var Dx = parseInt(bigElement.style.left);
       var Dy = parseInt(bigElement.style.top) + parseInt(bigElement.style.height);
 
-      //1 corner check - to improve if there's time...
+      //1 corner check - to improve?
       //SmallRect incoming from the North
         /*With help from Alex and Geng. Thanks to El for the "finishing touch", saved me hours of debugging...)*/
       if ((Dy >= dy) && (dy >= Ay) && (Ax <= ax) && (bx <= Bx)) {
         smallElement.style.top = (Ay - parseInt(smallElement.style.height)) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
         console.log("Moped hits Obj: North");
-        if (mopedElement.lunches <= 2 /*only for Restaurant*/) {
+        if (moped.lunches <= 2) {
           moped.lunches = 2;
         };
       };
@@ -106,8 +106,8 @@ var Moped = function(settings) {
         //ax = Bx + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
         console.log("Moped hits Obj: East");
-        if (mopedElement.lunches <= 2 /*only for Restaurant*/) {
-          mopedElement.lunches = 2;
+        if (moped.lunches <= 2) {
+          moped.lunches = 2;
         };
       };
 
@@ -116,8 +116,8 @@ var Moped = function(settings) {
         smallElement.style.top = Cy + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
         console.log("Moped hits Obj: South");
-        if (mopedElement.lunches <= 2) {
-          mopedElement.lunches = 2;
+        if (moped.lunches <= 2) {
+          moped.lunches = 2;
         };
       };
 
@@ -127,8 +127,8 @@ var Moped = function(settings) {
         smallElement.style.left = parseInt(bigElement.style.left) - parseInt(smallElement.style.width) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
         console.log("Moped hits Obj: West");
-        if (mopedElement.lunches <= 2) {
-          mopedElement.lunches = 2;
+        if (moped.lunches <= 2) {
+          moped.lunches = 2;
         };
       };
   };
@@ -161,7 +161,7 @@ var Moped = function(settings) {
       clipSmallAndBigRects("moped","restaurant");
       clipSmallAndBigRects("moped","deliveryA1");
       clipSmallAndBigRects("moped","deliveryB2");
-      clipSmallAndBigRects("moped","deliveryB3"); //Ask Jens why cannot pass only 1 object (need to create? Only in line styling works...)
+      clipSmallAndBigRects("moped","deliveryB3"); //Ask Jens why cannot pass only 1 object
     };
   };
 

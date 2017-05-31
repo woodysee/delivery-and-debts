@@ -33,7 +33,6 @@ var Game = function() {
     var restaurant = new Restaurant(settings);    // The restaurant
     assets[0] = player;
     assets[1] = new Restaurant();         // The restaurant
-    assets[2] = new 
     var frame = 0;                        // Frames since the start of the game
     var secondsPassed = 0;
 
@@ -98,9 +97,7 @@ var Game = function() {
       });
 
       //Add more event listeners
-      document.addEventListener(/**/, function(event){
-    }
-
+    };
     // Startup the game
     function init(){
       setupEvents();
@@ -138,6 +135,6 @@ var Game = function() {
             })();
 
             init();
-}
+};
 
 var g = new Game();
