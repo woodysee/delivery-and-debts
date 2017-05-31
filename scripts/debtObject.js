@@ -53,9 +53,37 @@ var debtObject = function(settings) {
       }
     }
 
-    // Move the moped around manually
+    function clipTwoCircles(circleElA,circleElB) {
+      var circleA = document.getElementById(circleElA);
+      var circleB = document.getElementById(circleElB);
+      var rA = parseInt(circleA.style.width) / 2;
+      var rB = parseInt(circleB.style.width) / 2;
+      //assuming width = height since it is a circle
+      var xA = parseInt(circleA.style.left) + rA;
+      var yA = parseInt(circleA.style.top) + rA;
+      var xB = parseInt(circleB.style.left) + rB;
+      var yB = parseInt(circleB.style.top) + rB;
 
-    function automatic(interactions){
+      var circleA = {radius: rA, x: xA, y: yA};
+      var circleB = {radius: rB, x: xB, y: yB};
+
+      var dx = Math.abs(circleA.x - circleB.x);
+      var dy = Math.abs(circleA.y - circleB.y);
+      var dO = Math.sqrt(dx * dx + dy * dy);
+
+      if (dO < (circleA.radius + circleB.radius)) {
+      // collision detected!
+        //xA + dx = xB;
+        //circleA.style.left + rA + dx = xB;
+        circleA.style.left = xB - rA - dx + "px";
+        //yA + dy = yB;
+        //circleA.style.top + rB + dy = yB;
+        circleA.style.top = yB - rB - dy + "px";
+      }
+    };
+    // governs all movement and impassable objects around manually
+
+    function automatic(interactionsDebtObject){
 
       if(interactions.up){
         debtElement.style.top = parseInt(debtElement.style.top)-settings.debtBallSpeed+"px";
@@ -76,15 +104,19 @@ var debtObject = function(settings) {
       if(settings.walls){
         wall();
       }
-    }
+
+      clipTwoCircles("d1","d2"); //WIP, not tested
+    };
 
     function create() {
         // Create the object asset;
-    }
+        //var div = document.createElement('debtObject');
+
+    };
 
     function init(){
       // create();
-      debtElement = document.getElementsByClasses("debtObject");
+      debtElement = document.getElementById("d1");
       debtElement.style.top = '175px';
       debtElement.style.left = '50px';
       debtElement.style.height = '10px';

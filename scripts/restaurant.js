@@ -22,14 +22,13 @@ var Restaurant = function(){
   // Adding lunches to restaurant
 
     // Moped arrives at restaurant,
-
-    function mopedCollectsLunches() {
+    
       /*Conditional*/
       // Moped has 2 lunches = do nothing;
       // Moped has 1 lunch = add 1 lunch;
+
+
       // Moped has 0 lunches = add 2 lunches;
-      return
-    }
 
   // Moped removes all takings
     // 5% of takings go into Earnings;

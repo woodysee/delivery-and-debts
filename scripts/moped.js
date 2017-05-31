@@ -18,7 +18,8 @@ var Moped = function(settings) {
 
   // Settings
   var mopedElement = null;
-  var xx = 0;
+  var takings = 0;
+  var lunches = 0;
 
     //Algorithm confirm('msg');urtesy of https://yal.cc/rectangle-circle-intersection-test/
 
@@ -37,7 +38,7 @@ var Moped = function(settings) {
 
     if(y_bottom > h){
       mopedElement.style.top = (h - parseInt(mopedElement.style.height)) + 'px';
-    }
+    };
 
     if(y_top < 0){
       mopedElement.style.top = '0px';
@@ -87,36 +88,50 @@ var Moped = function(settings) {
       var Dx = parseInt(bigElement.style.left);
       var Dy = parseInt(bigElement.style.top) + parseInt(bigElement.style.height);
 
-      //1 corner check - to improve
+      //1 corner check - to improve if there's time...
       //SmallRect incoming from the North
         /*With help from Alex and Geng. Thanks to El for the "finishing touch", saved me hours of debugging...)*/
       if ((Dy >= dy) && (dy >= Ay) && (Ax <= ax) && (bx <= Bx)) {
         smallElement.style.top = (Ay - parseInt(smallElement.style.height)) + "px";
-        console.log("North");
+        //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
+        console.log("Moped hits Obj: North");
+        if (moped.lunches <= 2) {
+          moped.lunches = 2;
+        };
       };
 
       //SmallRect incoming from the East
       if ((Ax <= ax) && (ax <= Bx) && (By <= ay) && (dy <= Cy)) {
         smallElement.style.left = Bx + "px";
         //ax = Bx + "px";
-        console.log("East");
+        //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
+        console.log("Moped hits Obj: East");
+        if (moped.lunches <= 2) {
+          moped.lunches = 2;
+        };
       };
 
       //SmallRect incoming from the South
       if ((By <= by) && (by <= Cy) && (cx <= Cx) && (Dx <= dx)) {
         smallElement.style.top = Cy + "px";
-        console.log("South");
+        //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
+        console.log("Moped hits Obj: South");
+        if (moped.lunches <= 2) {
+          moped.lunches = 2;
+        };
       };
 
       //SmallRect incoming from the West
       if ((cx <= Cx) && (Dx <= cx) && (dy <= Dy) && (Ay <= ay)) {
         //cx = Dx;
         smallElement.style.left = parseInt(bigElement.style.left) - parseInt(smallElement.style.width) + "px";
-        console.log("West");
+        //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
+        console.log("Moped hits Obj: West");
+        if (moped.lunches <= 2) {
+          moped.lunches = 2;
+        };
       };
   };
-
-  //Function for debtBallWalls here
 
   // Move the moped around manually
 
@@ -144,8 +159,10 @@ var Moped = function(settings) {
 
     if(settings.noclip === false){
       clipSmallAndBigRects("moped","restaurant");
+      clipSmallAndBigRects("moped","deliveryA1");
+      clipSmallAndBigRects("moped","deliveryB2");
+      clipSmallAndBigRects("moped","deliveryB3"); //Ask Jens why cannot pass only 1 object
     };
-
   };
 
   function create() {
@@ -165,7 +182,7 @@ var Moped = function(settings) {
 
   this.render = function(interactions){
     move(interactions);
-  }
+  };
 
   init();
 }

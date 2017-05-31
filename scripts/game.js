@@ -41,8 +41,14 @@ var Game = function() {
     interactions.up = false;              // Up arrow key pressed
     interactions.down = false;            // Down arrow key pressed
     interactions.left = false;            // Left arrow key pressed
-    interactions.right = false;           // Right arrow ket pressed
-    interactions.space = false;           // Space key pressed
+    interactions.right = false;           // Right arrow key pressed
+
+    // debtall interactions (WIP)
+    var interactionsd1 = {};
+    interactions.up = false;              // Up arrow key pressed
+    interactions.down = false;            // Down arrow key pressed
+    interactions.left = false;            // Left arrow key pressed
+    interactions.right = false;           // Right arrow key pressed
 
     // Setup event listeners
     function setupEvents() {
@@ -109,6 +115,10 @@ var Game = function() {
       //console.log(frame, secondsPassed);
       // Don't put a "return secondsPassed" here! If you want the timer to work... (30 May 2017, 11:27);
       timer(settings.dayLength, secondsPassed); //See dayTimer.js
+      //timers for individual deliveryVenues. May nest it inside function later;
+      timerD1(8, secondsPassed);
+      timerD2(10, secondsPassed);
+      timerD3(6, secondsPassed);
     };
 
     var self = this; // Add this line

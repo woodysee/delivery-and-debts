@@ -37,14 +37,35 @@
         <div class="delivery-venue-locations">
           <div id="deliveryR1"></div>
           <div id="deliveryR2"></div>
-          <div id="deliveryA1"></div>
+          <div id="deliveryA1" style="height: 60px; width: 40px; position: absolute; background-color: rgba(110, 107, 102, 0.1); top: 10px; left: 150px;">
+            <div id="deliveryA">
+              OFFICE<br><br><br /><br />
+            <span id="deliveryA-timer">
+              00:05
+            </span>
+            </div>
+          </div>
           <div id="deliveryB1"></div>
           <div id="deliveryC1"></div>
           <div id="deliveryA2"></div>
-          <div id="deliveryB2"></div>
+          <div id="deliveryB2" style="height: 60px; width: 40px; top: 140px; left: 270px;"><!--Inline styling necessary for the -->
+            <div id="deliveryB">
+              OFFICE<br><br><br /><br />
+            <span id="deliveryB-timer">
+              00:03
+            </span>
+            </div>
+          </div>
           <div id="deliveryC2"></div>
           <div id="deliveryA3"></div>
-          <div id="deliveryB3"></div>
+          <div id="deliveryB3" style="height: 60px; width: 40px; top: 270px; left: 270px;">
+            <div id="deliveryC">
+              OFFICE<br><br><br /><br />
+            <span id="deliveryC-timer">
+              00:06
+            </span>
+            </div>
+          </div>
           <div id="deliveryC3"></div>
         </div>
         <!--Potential spawn points for debt objects-->
@@ -84,6 +105,7 @@
     <script type="text/javascript" src="scripts/jquery.min.js"></script>
     <!-- Local JavaScript files below here-->
     <script src="scripts/moped.js"></script>
+    <script src="scripts/deliveryVenue.js"></script>
     <script src="scripts/debtObject.js"></script>
     <script src="scripts/restaurant.js"></script>
     <script src="scripts/dayTimer.js"></script>
