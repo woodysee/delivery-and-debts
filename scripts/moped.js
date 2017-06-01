@@ -113,7 +113,7 @@ var Moped = function(settings) {
           refillLunches();
         };
         /**/
-        if (bigElement.class == "delivery-venue") {
+        if (bigElement.classList[0] == "delivery-venue") {
           deliverLunch();
         }
         //Contextual consequences of hitting the object above
@@ -131,7 +131,7 @@ var Moped = function(settings) {
           refillLunches();
         };
         /**/
-        if (bigElement.class == "delivery-venue") {
+        if (bigElement.classList[0] == "delivery-venue") {
           deliverLunch();
         }
         //Contextual consequences of hitting the object above
@@ -147,7 +147,7 @@ var Moped = function(settings) {
           refillLunches();
         };
         /**/
-        if (bigElement.class == "delivery-venue") {
+        if (bigElement.classList[0] == "delivery-venue") {
           deliverLunch();
         }
         //Contextual consequences of hitting the object above
@@ -164,7 +164,7 @@ var Moped = function(settings) {
           refillLunches();
         };
         /**/
-        if (bigElement.class == "delivery-venue") {
+        if (bigElement.classList[0]  == "delivery-venue") {
           deliverLunch();
         }
         //Contextual consequences of hitting the object above
