@@ -47,7 +47,7 @@ There are some settings available to change the difficulty of the game, which ca
 
 1. Navigate to scripts/game.js.
 2. Open the file in a special text editor with JavaScript formatting such as Atom, Brackets or Sublime Text.
-3. Search for "//Game settings" inside the settings array within the function "Game()".
+3. Search for "//Game settings" inside the settings object within the function "Game()".
 4. Under the settings object, there are a whole list of settings you can change to modify your experience with the game.
 
 Example of a safe modification of settings:
@@ -69,4 +69,4 @@ SPECIAL THANKS TO
 - Jens H. Nielsen - our instructor
 - Geng Sng & Iskandar Jamaluddin - our teaching assistants
 - Alex Min, Elnathan Erh, Bryan Lee & Choong Han Xiang - for their guidance with my hurdles of JavaScript
-- And most importantly all the students of GA's sg-wdi-10! :)
+- And most importantly all the students of GA's sg-wdi-10!
