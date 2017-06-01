@@ -23,10 +23,10 @@ var Game = function() {
     settings.mopedSpeed = 2;               // The speed of the moped
     settings.walls = true;                 // The moped can roam outside the world
     settings.noclip = false;               // The moped can pass through all world impassable objects
-    settings.debtBallSpeed = 2;            // The debt Balls speed
-    settings.automatic = false;            // The debt Balls will move by itself
-    settings.dayLength = 60;/*seconds*/    // Duration of a day
-    settings.godmode = false;              // Debug mode (remove debtObjects)
+    settings.minlunchCost = 1;/*dollars*/  // The price of delivering lunches to a single venue
+    settings.randomlunchRange = 20;
+    settings.initEarnings = 50; /*negative dollars*/
+    settings.dayLength = 70;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
 
     //new object of an enemy, start_position, direction, every time, if it is 0 go minus, velocity
 
@@ -35,7 +35,6 @@ var Game = function() {
     var player = new Moped(settings);     // The player
     assets[0] = player;
     assets[1] = new Restaurant();         // The restaurant
-    //assets[2] = new DeliveryVenue();
     var frame = 0;                        // Frames since the start of the game
     var secondsPassed = 0;
 

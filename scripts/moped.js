@@ -18,6 +18,8 @@ var Moped = function(settings) {
 
   // Settings
   var mopedElement = null;
+  var earnings = document.getElementById("player1-earnings");
+  var lunchCount = document.getElementById("lunchCount");
 
   function wall() {
 
@@ -25,7 +27,6 @@ var Moped = function(settings) {
     var x_left = parseInt(mopedElement.style.left);
     var y_top = parseInt(mopedElement.style.top);
     var y_bottom = parseInt(mopedElement.style.top) + parseInt(mopedElement.style.height);
-
 
     var worldBox = document.getElementById("world");
     var mopedRect = mopedElement.getBoundingClientRect();
@@ -48,7 +49,7 @@ var Moped = function(settings) {
       mopedElement.style.left = (w - parseInt(mopedElement.style.width)) + 'px';
     }
 
-    if (x_right > w){
+    if(x_right > w){
       mopedElement.style.left = (w - parseInt(mopedElement.style.width)) + 'px';
     }
   };
@@ -57,22 +58,26 @@ var Moped = function(settings) {
 
   //Contextual conditional for restaurant: this allows the moped to refill lunches;
   function refillLunches() {
-    if (mopedElement.lunches <= 2) {
-      mopedElement.lunches = 2;
-      var lunchCount = document.getElementById("lunchCount");
-      lunchCount.innerHTML = mopedElement.lunches;
+    if (mopedElement.lunches == false) {
+      mopedElement.lunches = true;
+      lunchCount.innerHTML = "YES";
+      if (mopedElement.takings > 0) {
+        earnings.innerHTML = parseInt(earnings.innerHTML) - Math.ceil(0.1 * mopedElement.takings);
+        cashCount.innerHTML = 0;    //  update the HTML
+        mopedElement.takings = 0;   //  update the array
+      };
     };
   };
 
   //Contextual conditional for deliveryVenues: this allows the moped to deliver lunches on hand and receive $10 for each lunch delivered;
 
   function deliverLunch() {
-    if (parseInt(document.getElementById("lunchCount").innerHTML) > 0) {
+    if (document.getElementById("lunchCount").innerHTML == "YES") {
       /**/
-      var lunchCount = document.getElementById("lunchCount");
+      var randomlunchCost = Math.floor(Math.random() * settings.randomlunchRange) + settings.minlunchCost;
       mopedElement.lunches = mopedElement.lunches - 1;
       lunchCount.innerHTML = mopedElement.lunches;
-      mopedElement.takings = mopedElement.takings + 15;
+      mopedElement.takings = mopedElement.takings + randomlunchCost;
       var cashCount = document.getElementById("cashCount");
       cashCount.innerHTML = mopedElement.takings;
     };
@@ -115,7 +120,7 @@ var Moped = function(settings) {
         /**/
         if (bigElement.classList[0] == "delivery-venue") {
           deliverLunch();
-        }
+        };
         //Contextual consequences of hitting the object above
       };
 
@@ -133,7 +138,7 @@ var Moped = function(settings) {
         /**/
         if (bigElement.classList[0] == "delivery-venue") {
           deliverLunch();
-        }
+        };
         //Contextual consequences of hitting the object above
       };
 
@@ -166,8 +171,8 @@ var Moped = function(settings) {
         /**/
         if (bigElement.classList[0]  == "delivery-venue") {
           deliverLunch();
-        }
-        //Contextual consequences of hitting the object above
+        };
+        //End of Contextual consequences of hitting the object
       };
   };
 
@@ -217,8 +222,9 @@ var Moped = function(settings) {
     mopedElement.style.height = '15px';
     mopedElement.style.width = '15px';
     mopedElement.takings = 0;
-    mopedElement.lunches = 0;
-    /*this prevents moped from delivering all the lunches to aa single venue*/
+    mopedElement.lunches = false;
+    mopedElement.earnings = settings.initEarnings;
+
   };
 
   this.render = function(interactions){
@@ -226,5 +232,5 @@ var Moped = function(settings) {
   };
 
   init();
-}
+};
 /*End object Moped(settings)*/

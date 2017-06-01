@@ -16,31 +16,9 @@ $( document ).ready(function() {
 
 var Restaurant = function(){
 
-  //Settings
-  var xx = [];
-
-  // Adding lunches to restaurant
-
-    // Moped arrives at restaurant,
-
-      /*Conditional*/
-      // Moped has 2 lunches = do nothing;
-      // Moped has 1 lunch = add 1 lunch;
-
-
-      // Moped has 0 lunches = add 2 lunches;
-
-    var addToEarnings = 0;
-
     function mopedDepositsTakings() {
       /*Conditional: if moped collides with restaurant*/
-
-      // Moped removes all takings
-        // 5% of takings go into Earnings;
-      var takings = parseInt(mopedElement.takings);
-      return addToEarnings;
     };
-
     function init(){
       // create();
       restaurantElement = document.getElementById('restaurant');
@@ -48,10 +26,10 @@ var Restaurant = function(){
       restaurantElement.style.left = '15px';
       restaurantElement.style.height = '40px';
       restaurantElement.style.width = '40px';
-    };
+      };
 
-    this.render = function(interactions){
-    };
+      this.render = function(interactions){
+      };
 
-    init();
-}
+      init();
+};

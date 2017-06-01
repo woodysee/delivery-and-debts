@@ -19,58 +19,6 @@ var DeliveryVenue = function(){
   }; //to allow the interactions to work
 };
 
-  // var randomDuration = {}; //called in the render loop in game.js
-  // var randomDurationMin = 3;
-  // var randomDurationRange = 10;
-  //
-  // randomDuration.d1 = Math.floor(Math.random()*randomDurationRange)+randomDurationMin;
-  // randomDuration.d2 = Math.floor(Math.random()*randomDurationRange)+randomDurationMin;
-  // randomDuration.d3 = Math.floor(Math.random()*randomDurationRange)+randomDurationMin;
-
-  // function timerD1(duration, secondsPassed){
-  //   duration = duration - Math.floor(secondsPassed);
-  //
-  //   //First cycle
-  //   document.getElementById('deliveryA-timer').innerHTML = "00:" + duration;
-  //   if (duration >= 60) {
-  //     document.getElementById('deliveryA-timer').innerHTML = "01:00";
-  //   };
-  //   if(duration < 10) {
-  //     document.getElementById('deliveryA-timer').innerHTML = "00:0" + duration;
-  //   };
-  //   if(duration <= 0) {
-  //     document.getElementById('deliveryA-timer').innerHTML = "LATE!";
-  //   };
-  // };
-  //
-  // function timerD2(duration, secondsPassed){
-  //   duration = duration - Math.floor(secondsPassed);
-  //   document.getElementById('deliveryB-timer').innerHTML = "00:" + duration;
-  //   if (duration >= 60) {
-  //     document.getElementById('deliveryB-timer').innerHTML = "01:00";
-  //   };
-  //   if(duration < 10) {
-  //     document.getElementById('deliveryB-timer').innerHTML = "00:0" + duration;
-  //   };
-  //   if(duration <= 0) {
-  //     document.getElementById('deliveryB-timer').innerHTML = "LATE!";
-  //   };
-  // };
-  //
-  // function timerD3(duration, secondsPassed){
-  //   duration = duration - Math.floor(secondsPassed);
-  //   document.getElementById('deliveryC-timer').innerHTML = "00:" + duration;
-  //   if (duration >= 60) {
-  //     document.getElementById('deliveryC-timer').innerHTML = "01:00";
-  //   };
-  //   if(duration < 10) {
-  //     document.getElementById('deliveryC-timer').innerHTML = "00:0" + duration;
-  //   };
-  //   if(duration <= 0) {
-  //     document.getElementById('deliveryC-timer').innerHTML = "LATE!";
-  //   };
-  // };
-
   function createFirstDeliveryVenues(){
     // create();
     deliveryVenueElementA = document.getElementById('deliveryA');
