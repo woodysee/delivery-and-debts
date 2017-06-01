@@ -39,7 +39,7 @@ var Restaurant = function(){
         // 5% of takings go into Earnings;
       var takings = parseInt(mopedElement.takings);
       return addToEarnings;
-    }
+    };
 
     function init(){
       // create();

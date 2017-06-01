@@ -18,8 +18,6 @@ var Moped = function(settings) {
 
   // Settings
   var mopedElement = null;
-  var takings = 0;
-  var lunches = 0;
 
   function wall() {
 
@@ -66,11 +64,15 @@ var Moped = function(settings) {
     };
   };
 
-  //Contextual conditional for deliveryVenues: this allows the moped to deliver lunches on hand;
+  //Contextual conditional for deliveryVenues: this allows the moped to deliver lunches on hand and receive $10 for each lunch delivered;
 
   function deliverLunch() {
-    if (mopedElement.lunches > 0) {
-      mopedElement.takings = mopedElement.takings - 1;
+    if (parseInt(document.getElementById("lunchCount").innerHTML) > 0) {
+      /**/
+      var lunchCount = document.getElementById("lunchCount");
+      mopedElement.lunches = mopedElement.lunches - 1;
+      lunchCount.innerHTML = mopedElement.lunches;
+      mopedElement.takings = mopedElement.takings + 15;
       var cashCount = document.getElementById("cashCount");
       cashCount.innerHTML = mopedElement.takings;
     };
@@ -102,11 +104,10 @@ var Moped = function(settings) {
 
       //Wierd corner jumps - to improve code?
       //SmallRect incoming from the North
-        /*Made with some help from Alex and Geng. And thanks to El for the "finishing touch" on Tuesday, saved me hours of debugging...)*/
       if ((Dy >= dy) && (dy >= Ay) && (Ax <= ax) && (bx <= Bx)) {
         smallElement.style.top = (Ay - parseInt(smallElement.style.height)) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped has hit NORTH of " + bigElement.id + ", an impassable object.");
+        console.log("Moped has hit NORTH of " + bigElement.id + ", an impassable object with class of " + bigElement.class + ".");
         //Contextual consequences of hitting the object below
         if (bigElement.id == "restaurant") {
           refillLunches();
@@ -123,7 +124,7 @@ var Moped = function(settings) {
         smallElement.style.left = Bx + "px";
         //ax = Bx + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped has hit EAST of " + bigElement.id + ", an impassable object.");
+        console.log("Moped has hit EAST of " + bigElement.id + ", an impassable object with class of " + bigElement.class + ".");
 
         //Contextual consequences of hitting the object below
         if (bigElement.id == "restaurant") {
@@ -140,7 +141,7 @@ var Moped = function(settings) {
       if ((By <= by) && (by <= Cy) && (cx <= Cx) && (Dx <= dx)) {
         smallElement.style.top = Cy + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped has hit SOUTH of " + bigElement.id + ", an impassable object.");
+        console.log("Moped has hit SOUTH of " + bigElement.id + ", an impassable object with class of " + bigElement.class + ".");
         //Contextual consequences of hitting the object below
         if (bigElement.id == "restaurant") {
           refillLunches();
@@ -157,7 +158,7 @@ var Moped = function(settings) {
         //cx = Dx;
         smallElement.style.left = parseInt(bigElement.style.left) - parseInt(smallElement.style.width) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped has hit WEST of " + bigElement.id + ", an impassable object.");
+        console.log("Moped has hit WEST of " + bigElement.id + ", an impassable object with class of " + bigElement.class + ".");
         //Contextual consequences of hitting the object below
         if (bigElement.id == "restaurant") {
           refillLunches();
@@ -203,13 +204,9 @@ var Moped = function(settings) {
       clipSmallAndBigRects("moped","restaurant");
       clipSmallAndBigRects("moped","deliveryA");
       clipSmallAndBigRects("moped","deliveryB");
-      clipSmallAndBigRects("moped","deliveryB");
+      clipSmallAndBigRects("moped","deliveryC");
       // WIP: these need to be created with create() in object scripts.
     };
-  };
-
-  function create(){
-      // Create the object asset
   };
 
   function init(){
@@ -220,7 +217,8 @@ var Moped = function(settings) {
     mopedElement.style.height = '15px';
     mopedElement.style.width = '15px';
     mopedElement.takings = 0;
-    mopedElement.lunches = 2;
+    mopedElement.lunches = 0;
+    /*this prevents moped from delivering all the lunches to aa single venue*/
   };
 
   this.render = function(interactions){

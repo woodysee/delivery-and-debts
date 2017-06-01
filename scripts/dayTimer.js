@@ -23,7 +23,7 @@ function timer(duration, secondsPassed){
   document.getElementById('player1-timer').innerHTML = "00:" + duration;
   if (duration >= 60) {
     document.getElementById('player1-timer').innerHTML = "01:00";
-  }; //MAKE THIS BETTER! INFLEXIBLE CODE. WHAT HAPPENS IF THERE IS MORE THAN 1 MIN?
+  };
   if(duration < 10) {
     document.getElementById('player1-timer').innerHTML = "00:0" + duration;
   };

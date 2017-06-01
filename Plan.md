@@ -52,8 +52,8 @@ Objects
     > Initially, a countdown timer with a random duration between 3 and 6 seconds;
     > When Moped is at restaurant, generates a random timer between 3 and 6 seconds;
     > If Moped arrives...
-      > ...on time, full takings: $30;
-      > ...late, half takings: $15;
+      > ...on time, full takings: $20; => Earnings: $2;
+      > ...late, half takings: $10; => Earnings: $1;
 
     - Location
     > Randomly generated in the World

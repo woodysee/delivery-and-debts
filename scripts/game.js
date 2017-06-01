@@ -13,6 +13,9 @@ $( document ).ready(function() {
 
 /* ALL CODE SHOULD GO BELOW HERE */
 
+/*Landing Page, Game*/
+var gameState = "startScreen"; // if( gameState == "startScreen") { // show the start Screen } else if (gameState == "Game") { // game code goes here } else if (gameState == "endScreen") { // show endscreen }
+
 var Game = function() {
 
     // Game settings
@@ -32,7 +35,7 @@ var Game = function() {
     var player = new Moped(settings);     // The player
     assets[0] = player;
     assets[1] = new Restaurant();         // The restaurant
-    assets[2] = new DeliveryVenue();
+    //assets[2] = new DeliveryVenue();
     var frame = 0;                        // Frames since the start of the game
     var secondsPassed = 0;
 
@@ -93,15 +96,23 @@ var Game = function() {
               break;
           default:
               break;
-        }
+        };
+      });
+
+      closeGameButton.addEventListener('click',function(event){
+        var button = event.button;
+        if (button == document.getElementById("closegame-button")) {
+          closeGame();
+        };
       });
 
       //Add more event listeners
+
     };
     // Startup the game
     function init(){
+      createFirstDeliveryVenues();
       setupEvents();
-      /*create the deliveryVenues here*/
     }
 
     // The render function. It will be called 60/sec
@@ -112,10 +123,9 @@ var Game = function() {
         timer(settings.dayLength, secondsPassed); //See dayTimer.js
         // if (/*close button pressed*/) {
         // }
-        //timers for individual deliveryVenues. May nest it inside function later;
-        timerD1(randomDuration.d1, secondsPassed);
-        timerD2(randomDuration.d2, secondsPassed);
-        timerD3(randomDuration.d3, secondsPassed);
+        // timerD1(randomDuration.d1, secondsPassed);
+        // timerD2(randomDuration.d2, secondsPassed);
+        // timerD3(randomDuration.d3, secondsPassed);
       };
       secondsPassed = frame / 60; //no. of seconds passed per frame
       frame++;
