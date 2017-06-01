@@ -339,6 +339,9 @@
 #start-button {
   position: absolute;
   font-family: helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center;
   width: 100px;
   height: 50px;
   top: 270px;
@@ -350,4 +353,26 @@
   border-bottom: 1px solid rgba(84,135,107,1);
   border-left: 1px solid rgba(84,135,107,1);
   border-radius: 0.7em;
-}
+  -webkit-transition-duration: 0.4s; /* for Safari */
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+};
+
+.start-page button:hover {
+  position: absolute;
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  top: 270px;
+  left: 220px;
+  background-color: rgba(204,219,124,1);
+  color: rgba(110,107,102,1);
+  border-top: 1px solid rgba(84,135,107,1);
+  border-right: 1px solid rgba(84,135,107,1);
+  border-bottom: 1px solid rgba(84,135,107,1);
+  border-left: 1px solid rgba(84,135,107,1);
+  border-radius: 0.7em;
+};

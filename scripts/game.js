@@ -48,7 +48,7 @@ var Game = function() {
     settings.minlunchCost = 1;/*dollar(s)*/  // The price of delivering lunches to a single venue
     settings.randomlunchRange = 10;
     settings.initEarnings = 50;/*negative dollar(s)*/
-    settings.dayLength = 10;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
+    settings.dayLength = 60;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
 
     // Window settings
     var assets = [];                      // All game objects
@@ -115,12 +115,6 @@ var Game = function() {
         };
       });
 
-      document.addEventListener('keydown', function(event){
-        var keyName = event.key;
-
-        }
-      )};
-
       closeGameButton.addEventListener('click',function(event){
         var button = event.button;
         if (button == document.getElementById("closegame-button")) {
@@ -129,7 +123,7 @@ var Game = function() {
       });
 
       //Add more event listeners
-
+    };
     // Startup the game
     function init(){
       createFirstDeliveryVenues();
@@ -166,4 +160,14 @@ var Game = function() {
             init();
 };
 
-new Game();
+if (gameState = "gameOff") {
+  document.querySelector('#start-button').addEventListener('click', startGame);
+  function startGame() {
+    new Game();
+    var startPage = document.getElementById("start-page");
+    var playerSpace = document.getElementById("player1-space");
+    startPage.style.display = "none";
+    playerSpace.style.display = "block";
+    console.log("test");
+  }
+};
