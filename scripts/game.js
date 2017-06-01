@@ -32,6 +32,7 @@ var Game = function() {
     var player = new Moped(settings);     // The player
     assets[0] = player;
     assets[1] = new Restaurant();         // The restaurant
+    assets[2] = new DeliveryVenue();
     var frame = 0;                        // Frames since the start of the game
     var secondsPassed = 0;
 
@@ -107,18 +108,18 @@ var Game = function() {
     this.render = function(){ // Change to this.render
       for(var i=0; i < assets.length; i++){
         assets[i].render(interactions);
+        // Don't put a "return secondsPassed" here if you want the timer to work... (30 May 2017, 11:27);
+        timer(settings.dayLength, secondsPassed); //See dayTimer.js
+        // if (/*close button pressed*/) {
+        // }
+        //timers for individual deliveryVenues. May nest it inside function later;
+        timerD1(randomDuration.d1, secondsPassed);
+        timerD2(randomDuration.d2, secondsPassed);
+        timerD3(randomDuration.d3, secondsPassed);
       };
       secondsPassed = frame / 60; //no. of seconds passed per frame
       frame++;
-      //console.log(frame, secondsPassed);
-      // Don't put a "return secondsPassed" here! If you want the timer to work... (30 May 2017, 11:27);
-      timer(settings.dayLength, secondsPassed); //See dayTimer.js
-      //timers for individual deliveryVenues. May nest it inside function later;
-      timerD1(randomDuration.d1, secondsPassed);
-      timerD2(randomDuration.d2, secondsPassed);
-      timerD3(randomDuration.d3, secondsPassed);
-      // if (/*close button pressed*/) {
-      // }
+      // console.log(frame, secondsPassed); // - checks render loop
     };
 
     var self = this; // Add this line

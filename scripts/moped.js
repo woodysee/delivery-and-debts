@@ -201,14 +201,14 @@ var Moped = function(settings) {
       /*  > Passes over the Restaurant */
       /*  > Passes over the Delivery Venues */
       clipSmallAndBigRects("moped","restaurant");
-      clipSmallAndBigRects("moped","deliveryA1");
-      clipSmallAndBigRects("moped","deliveryB2");
-      clipSmallAndBigRects("moped","deliveryB3");
+      clipSmallAndBigRects("moped","deliveryA");
+      clipSmallAndBigRects("moped","deliveryB");
+      clipSmallAndBigRects("moped","deliveryB");
       // WIP: these need to be created with create() in object scripts.
     };
   };
 
-  function create() {
+  function create(){
       // Create the object asset
   };
 

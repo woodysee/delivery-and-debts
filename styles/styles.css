@@ -221,45 +221,36 @@
   }
 
   #deliveryA {
-    height: 60px;
-    width: 40px;
     position: absolute;
     color: white;
     font-family: helvetica, sans-serif;
     font-size: 8px;
     background-color: rgba(84, 135, 107, 1);
-    top: 0px;
-    left: 0px;
     padding: 3px 3px 3px 3px;
     text-align: center;
+    /*all top, left, height, width is defined in init*/
   }
 
   #deliveryB {
-    height: 60px;
-    width: 40px;
     position: absolute;
     color: white;
     font-family: helvetica, sans-serif;
     font-size: 8px;
     background-color: rgba(84, 135, 107, 1);
-    top: 0px;
-    left: 0px;
     padding: 3px 3px 3px 3px;
     text-align: center;
+    /*all top, left, height, width is defined in init*/
   }
 
   #deliveryC {
-    height: 60px;
-    width: 40px;
     position: absolute;
     color: white;
     font-family: helvetica, sans-serif;
     font-size: 8px;
     background-color: rgba(84, 135, 107, 1);
-    top: 0px;
-    left: 0px;
     padding: 3px 3px 3px 3px;
     text-align: center;
+    /*all top, left, height, width is defined in init*/
   }
 
 #player1-infobar {
