@@ -65,6 +65,10 @@ var Moped = function(settings) {
         earnings.innerHTML = parseInt(earnings.innerHTML) - Math.ceil(0.1 * mopedElement.takings);
         cashCount.innerHTML = 0;    //  update the HTML
         mopedElement.takings = 0;   //  update the array
+        if (parseInt(earnings.innerHTML) <= 0) {
+          earnings.innerHTML = 0;
+          winGame();
+        };
       };
     };
   };
@@ -76,7 +80,7 @@ var Moped = function(settings) {
       /**/
       var randomlunchCost = Math.floor(Math.random() * settings.randomlunchRange) + settings.minlunchCost;
       mopedElement.lunches = mopedElement.lunches - 1;
-      lunchCount.innerHTML = mopedElement.lunches;
+      lunchCount.innerHTML = "NO";
       mopedElement.takings = mopedElement.takings + randomlunchCost;
       var cashCount = document.getElementById("cashCount");
       cashCount.innerHTML = mopedElement.takings;
@@ -224,7 +228,6 @@ var Moped = function(settings) {
     mopedElement.takings = 0;
     mopedElement.lunches = false;
     mopedElement.earnings = settings.initEarnings;
-
   };
 
   this.render = function(interactions){

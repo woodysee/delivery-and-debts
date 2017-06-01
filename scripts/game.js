@@ -13,8 +13,30 @@ $( document ).ready(function() {
 
 /* ALL CODE SHOULD GO BELOW HERE */
 
-/*Landing Page, Game*/
-var gameState = "startScreen"; // if( gameState == "startScreen") { // show the start Screen } else if (gameState == "Game") { // game code goes here } else if (gameState == "endScreen") { // show endscreen }
+// Win / Lose conditionals
+
+//initial gameState
+var gameState = "gameOff";
+
+function togglePause() {
+  console.log("Toggle pause with space bar");
+};
+
+function winGame() {
+  if (gameState = "gameOn"){
+    gameState = "gameOff";
+    console.log("By some miracle, you have cleared your debts. Congratulations! ---- Take out a high interest loan and buy a sports car.");
+    /* create win Game Elements */
+    /*  */
+  };
+};
+
+function loseGame() {
+  if (gameState = "gameOn"){
+    gameState = "gameOff";
+    console.log("You have filed for bankruptcy. ---- Get a loan from your parents.");
+  };
+};
 
 var Game = function() {
 
@@ -23,18 +45,17 @@ var Game = function() {
     settings.mopedSpeed = 2;               // The speed of the moped
     settings.walls = true;                 // The moped can roam outside the world
     settings.noclip = false;               // The moped can pass through all world impassable objects
-    settings.minlunchCost = 1;/*dollars*/  // The price of delivering lunches to a single venue
-    settings.randomlunchRange = 20;
-    settings.initEarnings = 50; /*negative dollars*/
-    settings.dayLength = 70;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
-
-    //new object of an enemy, start_position, direction, every time, if it is 0 go minus, velocity
+    settings.minlunchCost = 1;/*dollar(s)*/  // The price of delivering lunches to a single venue
+    settings.randomlunchRange = 10;
+    settings.initEarnings = 50;/*negative dollar(s)*/
+    settings.dayLength = 10;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
 
     // Window settings
     var assets = [];                      // All game objects
     var player = new Moped(settings);     // The player
     assets[0] = player;
     assets[1] = new Restaurant();         // The restaurant
+    assets[2] = new DeliveryVenue();      // The delivery venues
     var frame = 0;                        // Frames since the start of the game
     var secondsPassed = 0;
 
@@ -45,15 +66,8 @@ var Game = function() {
     interactions.left = false;            // Left arrow key pressed
     interactions.right = false;           // Right arrow key pressed
 
-    // debtall interactions (WIP)
-    var interactionsd1 = {};
-    interactions.up = false;              // Up arrow key pressed
-    interactions.down = false;            // Down arrow key pressed
-    interactions.left = false;            // Left arrow key pressed
-    interactions.right = false;           // Right arrow key pressed
-
     // Setup event listeners
-    function setupEvents() {
+    function setupGameEvents() {
 
       // Linking up, down, left and right keys to movement
       document.addEventListener('keyup', function(event){
@@ -74,7 +88,7 @@ var Game = function() {
               break;
           default:
               break;
-        }
+        };
       });
 
       document.addEventListener('keydown', function(event){
@@ -93,10 +107,19 @@ var Game = function() {
           case "ArrowDown":
               interactions.down = true;
               break;
+          case " ":
+              togglePause();
+              break;
           default:
               break;
         };
       });
+
+      document.addEventListener('keydown', function(event){
+        var keyName = event.key;
+
+        }
+      )};
 
       closeGameButton.addEventListener('click',function(event){
         var button = event.button;
@@ -107,28 +130,22 @@ var Game = function() {
 
       //Add more event listeners
 
-    };
     // Startup the game
     function init(){
       createFirstDeliveryVenues();
-      setupEvents();
-    }
+      setupGameEvents();
+    };
 
     // The render function. It will be called 60/sec
     this.render = function(){ // Change to this.render
-      for(var i=0; i < assets.length; i++){
+      for(var i = 0; i < assets.length; i++){
         assets[i].render(interactions);
         // Don't put a "return secondsPassed" here if you want the timer to work... (30 May 2017, 11:27);
         timer(settings.dayLength, secondsPassed); //See dayTimer.js
-        // if (/*close button pressed*/) {
-        // }
-        // timerD1(randomDuration.d1, secondsPassed);
-        // timerD2(randomDuration.d2, secondsPassed);
-        // timerD3(randomDuration.d3, secondsPassed);
       };
       secondsPassed = frame / 60; //no. of seconds passed per frame
       frame++;
-      // console.log(frame, secondsPassed); // - checks render loop
+      // console.log(frame, secondsPassed); // - Checks render loop. Uncomment and see console to see log.
     };
 
     var self = this; // Add this line
@@ -149,4 +166,4 @@ var Game = function() {
             init();
 };
 
-var g = new Game();
+new Game();

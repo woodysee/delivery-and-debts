@@ -64,7 +64,7 @@
   }
 
   #lunchesOnHandTextBox span:nth-child(2) {
-    left: 55px;
+    left: 53px;
     font-size: 15px;
     height: 30px;
     top: -3px;
@@ -94,7 +94,7 @@
   }
 
   #cashOnHandTextBox span:nth-child(2) {
-    left: 55px;
+    left: 60px;
     font-size: 18px;
     top: -2px;
   }
@@ -308,4 +308,46 @@
   font-family: helvetica, sans-serif;
   font-size: 18px;
   font-weight: bold;
+}
+
+/*START PAGE*/
+
+#start-page {
+  /* 4:3 box for single player */
+  width: 544px;
+  height: 483px;
+  background-color: rgba(84,135,107,1);
+  position: absolute;
+  margin: 0px 0px 0px 0px;
+  border-top: 1px solid rgba(84,135,107,1);
+  border-right: 1px solid rgba(84,135,107,1);
+  border-bottom: 1px solid rgba(84,135,107,1);
+  border-left: 1px solid rgba(84,135,107,1);
+}
+
+#game-title {
+  position: absolute;
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+  top: 200px;
+  left: 60px;
+  font-size: 30px;
+  color: rgba(231,237,187,1);
+  letter-spacing: 8px;
+}
+
+#start-button {
+  position: absolute;
+  font-family: helvetica, sans-serif;
+  width: 100px;
+  height: 50px;
+  top: 270px;
+  left: 220px;
+  background-color: rgba(204,219,124,1);
+  color: rgba(110,107,102,1);
+  border-top: 1px solid rgba(84,135,107,1);
+  border-right: 1px solid rgba(84,135,107,1);
+  border-bottom: 1px solid rgba(84,135,107,1);
+  border-left: 1px solid rgba(84,135,107,1);
+  border-radius: 0.7em;
 }

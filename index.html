@@ -23,7 +23,8 @@
     <!---->
     <!--ALL USER HTML CONTENT SHOULD GO BELOW THIS COMMENT-->
     <!---->
-    <div id="player1-space">
+  <div id="wrapper">
+    <div id="player1-space" style="display: none;">
       <button id="closegame-button" onclick="closeGame()">
         <div id="x-text">X</div>
       </button>
@@ -69,10 +70,19 @@
           <span>Lunches:</span><span id="lunchCount">NO</span>
         </div>
         <div id="cashOnHandTextBox">
-          <span>Takings: $</span><span id="cashCount">00</span>
+          <span>Takings: $</span><span id="cashCount">0</span>
         </div>
         <div id="player1-earningstext">Earnings</div>
         <div id="player1-earningsbox">- $ <span id="player1-earnings">50</span></div>
+    </div>
+
+    <div id="start-page">
+      <!-- temp -->
+      <div id="game-title">
+          <!-- temp -->
+        DELIVERY & DEBTS
+      </div>
+      <button id="start-button" onclick=" new Game()">Start</button>
     </div>
 
     <!---->
@@ -87,14 +97,12 @@
     <!-- Local JavaScript files below here-->
     <script src="scripts/moped.js"></script>
     <script src="scripts/deliveryVenue.js"></script>
-    <script src="scripts/debtObject.js"></script>
     <script src="scripts/restaurant.js"></script>
     <script src="scripts/dayTimer.js"></script>
-    <script src="scripts/dayOfTheWeek.js"></script>
     <script src="scripts/closeGame.js"></script>
     <script src="scripts/game.js"></script>
 
     <!-- Local JavaScript files above here-->
-
+  </div><!--For the div-->
   </body>
 </html>

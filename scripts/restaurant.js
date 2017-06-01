@@ -30,6 +30,6 @@ var Restaurant = function(){
 
       this.render = function(interactions){
       };
-
+      
       init();
 };

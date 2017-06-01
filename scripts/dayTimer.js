@@ -20,7 +20,7 @@ function timer(duration, secondsPassed){
 
   if(duration == 600) {
     document.getElementById('player1-timer').innerHTML = "10:00";
-  }
+  };
 
   if(duration >= 60 && duration < 600) {
     var minutes = Math.floor(duration / 60);
@@ -38,7 +38,8 @@ function timer(duration, secondsPassed){
   if(duration <= 0) {
     document.getElementById('player1-timer').innerHTML = "END";
     /*trigger lose game condition*/
-    console.log("game over. you suck. try again.");
+    gameState = "gameOff";
+    loseGame();
   };
 };
 // In this.render function on game.js, put timer(settings.dayLength, secondsPassed); after frame++;
