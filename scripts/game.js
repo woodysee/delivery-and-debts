@@ -15,19 +15,35 @@ $( document ).ready(function() {
 
 // Win / Lose conditionals
 
-//initial gameState
+//initial Landing Page
 var gameState = "gameOff";
 
+//Game State Displays Variables
+var startPage = document.getElementById("start-page");
+var winPage = document.getElementById("win-page");
+var losePage = document.getElementById("lose-page");
+var playerSpace = document.getElementById("player1-space");
+
+//Display Start Page
+startPage.style.display = "block";
+winPage.style.display = "none";
+losePage.style.display = "none";
+playerSpace.style.display = "none";
+
+//WIP: pause button
 function togglePause() {
   console.log("Toggle pause with space bar");
 };
 
+//Win-lose conditions
 function winGame() {
   if (gameState = "gameOn"){
     gameState = "gameOff";
     console.log("By some miracle, you have cleared your debts. Congratulations! ---- Take out a high interest loan and buy a sports car.");
-    /* create win Game Elements */
-    /*  */
+    startPage.style.display = "none";
+    winPage.style.display = "block";
+    losePage.style.display = "none";
+    playerSpace.style.display = "none";
   };
 };
 
@@ -35,6 +51,10 @@ function loseGame() {
   if (gameState = "gameOn"){
     gameState = "gameOff";
     console.log("You have filed for bankruptcy. ---- Get a loan from your parents.");
+    startPage.style.display = "none";
+    winPage.style.display = "none";
+    losePage.style.display = "block";
+    playerSpace.style.display = "none";
   };
 };
 
@@ -115,14 +135,10 @@ var Game = function() {
         };
       });
 
-      closeGameButton.addEventListener('click',function(event){
-        var button = event.button;
-        if (button == document.getElementById("closegame-button")) {
-          closeGame();
-        };
-      });
+      document.querySelector('#closegame-button').addEventListener('click', closeGame);
 
       //Add more event listeners
+
     };
     // Startup the game
     function init(){
@@ -164,10 +180,10 @@ if (gameState = "gameOff") {
   document.querySelector('#start-button').addEventListener('click', startGame);
   function startGame() {
     new Game();
-    var startPage = document.getElementById("start-page");
-    var playerSpace = document.getElementById("player1-space");
     startPage.style.display = "none";
+    winPage.style.display = "none";
+    losePage.style.display = "none";
     playerSpace.style.display = "block";
     console.log("test");
-  }
+  };
 };

@@ -25,7 +25,7 @@
     <!---->
   <div id="wrapper">
     <div id="player1-space">
-      <button id="closegame-button" onclick="closeGame()">
+      <button id="closegame-button">
         <div id="x-text">X</div>
       </button>
       <div id="world">
@@ -61,28 +61,47 @@
           </div>
         </div>
       </div>
-
-    </div>
-    <div id="player1-infobar">
-        <div id="player1-dayOfTheWeek">LUNCHTIME!</div>
-        <div id="player1-timer"></div>
-        <div id="lunchesOnHandTextBox">
-          <span>Lunches:</span><span id="lunchCount">NO</span>
-        </div>
-        <div id="cashOnHandTextBox">
-          <span>Takings: $</span><span id="cashCount">0</span>
-        </div>
-        <div id="player1-earningstext">Earnings</div>
-        <div id="player1-earningsbox">- $ <span id="player1-earnings">50</span></div>
+      <div id="player1-infobar">
+          <div id="player1-dayOfTheWeek">LUNCHTIME!</div>
+          <div id="player1-timer"></div>
+          <div id="lunchesOnHandTextBox">
+            <span>Lunches:</span><span id="lunchCount">NO</span>
+          </div>
+          <div id="cashOnHandTextBox">
+            <span>Takings: $</span><span id="cashCount">0</span>
+          </div>
+          <div id="player1-earningstext">Earnings</div>
+          <div id="player1-earningsbox">- $ <span id="player1-earnings">50</span></div>
+      </div>
     </div>
 
     <div id="start-page">
-      <!-- temp -->
-      <div id="game-title">
-          <!-- temp -->
-        DELIVERY & DEBTS
+      <div id="start-page-bg">
+        <div id="game-title">
+          DELIVERY & DEBTS
+        </div>
+        <button id="start-button">START</button>
       </div>
-      <button id="start-button">START</button>
+    </div>
+
+    <div id="win-page">
+      <div id="win-page-bg">
+        <div id="win-title">
+        By some miracle, you have cleared your debts.<br /><br />Congratulations!
+        </div>
+        <button>
+          Take out a high interest loan and buy a sports car to celebrate!
+        </button>
+      </div>
+    </div>
+
+    <div id="lose-page">
+      <div id="lose-page-bg">
+        <div id="lose-title">
+        You were not able to pay your debts in time.
+        </div>
+        <button>Get a high interest loan and try again</button>
+      </div>
     </div>
 
     <!---->

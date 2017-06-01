@@ -18,8 +18,6 @@ var closeGame = function () {
   if (confirm('Declare bankruptcy?')) {
     // Goodbye World!
     alert("Goodbye World!");
-    /*resets game*/
-    location.reload();
-    /*if there is a game state, remember to change location.reload into startScreen*/
+    loseGame();
   }
 };

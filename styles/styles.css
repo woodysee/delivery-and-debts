@@ -313,16 +313,19 @@
 /*START PAGE*/
 
 #start-page {
+  display: block;
+}
+
+#start-page-bg {
   /* 4:3 box for single player */
   width: 544px;
   height: 483px;
   background-color: rgba(84,135,107,1);
   position: absolute;
   margin: 0px 0px 0px 0px;
-  border-top: 1px solid rgba(84,135,107,1);
-  border-right: 1px solid rgba(84,135,107,1);
-  border-bottom: 1px solid rgba(84,135,107,1);
-  border-left: 1px solid rgba(84,135,107,1);
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* for Safari */
+  -moz-transition-duration: 0.4s;
 }
 
 #game-title {
@@ -348,31 +351,98 @@
   left: 220px;
   background-color: rgba(204,219,124,1);
   color: rgba(110,107,102,1);
-  border-top: 1px solid rgba(84,135,107,1);
-  border-right: 1px solid rgba(84,135,107,1);
-  border-bottom: 1px solid rgba(84,135,107,1);
-  border-left: 1px solid rgba(84,135,107,1);
   border-radius: 0.7em;
+  transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s; /* for Safari */
   -moz-transition-duration: 0.4s;
-  transition-duration: 0.4s;
 };
 
-.start-page button:hover {
+/*END OF START PAGE*/
+/*WIN PAGE*/
+#win-page {
+  display: block;
+}
+
+#win-page-bg {
+  width: 544px;
+  height: 483px;
+  background-color: rgba(84,135,107,1);
+  position: absolute;
+  margin: 0px 0px 0px 0px;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* for Safari */
+  -moz-transition-duration: 0.4s;
+}
+
+#win-title {
   position: absolute;
   font-family: helvetica, sans-serif;
   font-weight: bold;
-  letter-spacing: 5px;
+  top: 200px;
+  left: 60px;
+  font-size: 30px;
+  color: rgba(231,237,187,1);
+  letter-spacing: 0px;
+}
+
+#win-page button {
+  position: absolute;
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
   text-align: center;
-  width: 100px;
-  height: 50px;
+  width: 300px;
+  height: 60px;
   top: 270px;
-  left: 220px;
+  left: 122px;
   background-color: rgba(204,219,124,1);
   color: rgba(110,107,102,1);
-  border-top: 1px solid rgba(84,135,107,1);
-  border-right: 1px solid rgba(84,135,107,1);
-  border-bottom: 1px solid rgba(84,135,107,1);
-  border-left: 1px solid rgba(84,135,107,1);
   border-radius: 0.7em;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* for Safari */
+  -moz-transition-duration: 0.4s;
 };
+/*END OF WIN PAGE*/
+/*LOSE PAGE*/
+#lose-page {
+  display: block;
+}
+
+#lose-page-bg {
+  /* 4:3 box for single player */
+  width: 544px;
+  height: 483px;
+  background-color: rgba(84,135,107,1);
+  position: absolute;
+  margin: 0px 0px 0px 0px;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* for Safari */
+  -moz-transition-duration: 0.4s;
+}
+
+#lose-title {
+  position: absolute;
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+  top: 200px;
+  left: 60px;
+  font-size: 20px;
+  color: rgba(231,237,187,1);
+  text-align: center;
+}
+
+#lose-page button {
+  position: absolute;
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+  width: 300px;
+  height: 60px;
+  top: 270px;
+  left: 122px;
+  background-color: rgba(204,219,124,1);
+  color: rgba(110,107,102,1);
+  border-radius: 0.7em;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* for Safari */
+  -moz-transition-duration: 0.4s;
+};
+/*END OF LOSE PAGE*/
