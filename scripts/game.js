@@ -18,13 +18,13 @@ $( document ).ready(function() {
 //initial Landing Page
 var gameState = "gameOff";
 
-//Game State Displays Variables
+//Game State - Global Variables
 var startPage = document.getElementById("start-page");
 var winPage = document.getElementById("win-page");
 var losePage = document.getElementById("lose-page");
 var playerSpace = document.getElementById("player1-space");
 
-//Display Start Page
+//Display Start Page - Initial Landing Page
 startPage.style.display = "block";
 winPage.style.display = "none";
 losePage.style.display = "none";
@@ -39,8 +39,9 @@ function togglePause() {
 function winGame() {
   if (gameState = "gameOn"){
     gameState = "gameOff";
-    console.log("By some miracle, you have cleared your debts. Congratulations! ---- Take out a high interest loan and buy a sports car.");
+    // console.log("Win Condition Test");
     startPage.style.display = "none";
+    //customPage.style.display = "none";
     winPage.style.display = "block";
     losePage.style.display = "none";
     playerSpace.style.display = "none";
@@ -52,6 +53,7 @@ function loseGame() {
     gameState = "gameOff";
     console.log("You have filed for bankruptcy. ---- Get a loan from your parents.");
     startPage.style.display = "none";
+    //customPage.style.display = "none";
     winPage.style.display = "none";
     losePage.style.display = "block";
     playerSpace.style.display = "none";
@@ -65,9 +67,9 @@ var Game = function() {
     settings.mopedSpeed = 2;               // The speed of the moped
     settings.walls = true;                 // The moped can roam outside the world
     settings.noclip = false;               // The moped can pass through all world impassable objects
-    settings.minlunchCost = 1;/*dollar(s)*/  // The price of delivering lunches to a single venue
-    settings.randomlunchRange = 10;
-    settings.initEarnings = 50;/*negative dollar(s)*/
+    settings.minlunchCost = 10;/*dollar(s)*/  // The price of delivering lunches to a single venue
+    settings.randomlunchRange = 50;
+    settings.initEarnings = 30;/*negative dollar(s)*/
     settings.dayLength = 60;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
 
     // Window settings
@@ -175,15 +177,29 @@ var Game = function() {
 
             init();
 };
+/*End Game*/
 
-if (gameState = "gameOff") {
-  document.querySelector('#start-button').addEventListener('click', startGame);
-  function startGame() {
-    new Game();
-    startPage.style.display = "none";
-    winPage.style.display = "none";
-    losePage.style.display = "none";
-    playerSpace.style.display = "block";
-    console.log("test");
+//Game Off Buttons
+function fauxNav() {
+  if (gameState = "gameOff") {
+    function backHome() {
+      startPage.style.display = "block";
+      winPage.style.display = "none";
+      losePage.style.display = "none";
+      playerSpace.style.display = "none";
+    }
+    document.querySelector('#start-button').addEventListener('click', startGame);
+    document.querySelector('#lose-retry-button').addEventListener('click', backHome);
+    document.querySelector('#win-retry-button').addEventListener('click', backHome);
+    function startGame() {
+      new Game();
+      startPage.style.display = "none";
+      winPage.style.display = "none";
+      losePage.style.display = "none";
+      playerSpace.style.display = "block";
+      //console.log("test start button");
+    };
   };
 };
+
+fauxNav();

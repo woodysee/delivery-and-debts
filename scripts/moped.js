@@ -54,9 +54,6 @@ var Moped = function(settings) {
     }
   };
 
-  // Function for clipTwoObjects here
-
-  //Contextual conditional for restaurant: this allows the moped to refill lunches;
   function refillLunches() {
     if (mopedElement.lunches == false) {
       mopedElement.lunches = true;
@@ -72,8 +69,6 @@ var Moped = function(settings) {
       };
     };
   };
-
-  //Contextual conditional for deliveryVenues: this allows the moped to deliver lunches on hand and receive $10 for each lunch delivered;
 
   function deliverLunch() {
     if (document.getElementById("lunchCount").innerHTML == "YES") {
@@ -205,16 +200,10 @@ var Moped = function(settings) {
     };
 
     if(settings.noclip === false){
-      /*  > Cannot pass though Moped */
-      /*  > Collision detection  */
-      /*  > Cannot pass through another Debt Ball */
-      /*  > Passes over the Restaurant */
-      /*  > Passes over the Delivery Venues */
       clipSmallAndBigRects("moped","restaurant");
       clipSmallAndBigRects("moped","deliveryA");
       clipSmallAndBigRects("moped","deliveryB");
       clipSmallAndBigRects("moped","deliveryC");
-      // WIP: these need to be created with create() in object scripts.
     };
   };
 
@@ -236,4 +225,3 @@ var Moped = function(settings) {
 
   init();
 };
-/*End object Moped(settings)*/

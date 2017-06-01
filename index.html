@@ -23,7 +23,7 @@
     <!---->
     <!--ALL USER HTML CONTENT SHOULD GO BELOW THIS COMMENT-->
     <!---->
-  <div id="wrapper">
+  <div id="player1">
     <div id="player1-space">
       <button id="closegame-button">
         <div id="x-text">X</div>
@@ -62,7 +62,7 @@
         </div>
       </div>
       <div id="player1-infobar">
-          <div id="player1-dayOfTheWeek">LUNCHTIME!</div>
+          <div id="player1-lunchtime">LUNCHTIME!</div>
           <div id="player1-timer"></div>
           <div id="lunchesOnHandTextBox">
             <span>Lunches:</span><span id="lunchCount">NO</span>
@@ -80,17 +80,18 @@
         <div id="game-title">
           DELIVERY & DEBTS
         </div>
-        <button id="start-button">START</button>
+        <h3>GAME</h3>
+        <button id="start-button">PLAY</button>
       </div>
     </div>
 
     <div id="win-page">
       <div id="win-page-bg">
         <div id="win-title">
-        By some miracle, you have cleared your debts.<br /><br />Congratulations!
+        By some miracle, you have cleared your debts.<br /><big>Congratulations!</big>
         </div>
-        <button>
-          Take out a high interest loan and buy a sports car to celebrate!
+        <button id="win-retry-button">
+          Buy a sports car to celebrate!<br /><small>(Paid for by a high interest loan of course)</small>
         </button>
       </div>
     </div>
@@ -100,7 +101,7 @@
         <div id="lose-title">
         You were not able to pay your debts in time.
         </div>
-        <button>Get a high interest loan and try again</button>
+        <button id="lose-retry-button">Get a high interest loan and try again</button>
       </div>
     </div>
 

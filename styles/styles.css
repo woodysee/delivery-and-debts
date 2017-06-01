@@ -1,4 +1,5 @@
 #closegame-button {
+  display: block;
   height: 15px;
   width: 15px;
   background-color: rgba(194,0,85,1);
@@ -94,7 +95,7 @@
   }
 
   #cashOnHandTextBox span:nth-child(2) {
-    left: 60px;
+    left: 50px;
     font-size: 18px;
     top: -2px;
   }
@@ -258,7 +259,7 @@
   background-color: rgba(110, 107, 102, 1);
 }
 
-#player1-dayOfTheWeek {
+#player1-lunchtime {
   background-color: rgba(172, 134, 165, 1);
   position: absolute;
   margin: 4px 4px 4px 4px;
@@ -313,11 +314,11 @@
 /*START PAGE*/
 
 #start-page {
-  display: block;
 }
 
 #start-page-bg {
   /* 4:3 box for single player */
+  display: block;
   width: 544px;
   height: 483px;
   background-color: rgba(84,135,107,1);
@@ -329,26 +330,40 @@
 }
 
 #game-title {
+  display: block;
   position: absolute;
   font-family: helvetica, sans-serif;
   font-weight: bold;
-  top: 200px;
+  top: 100px;
   left: 60px;
   font-size: 30px;
   color: rgba(231,237,187,1);
   letter-spacing: 8px;
 }
 
-#start-button {
+#start-page-bg h3 {
+  display: block;
   position: absolute;
   font-family: helvetica, sans-serif;
   font-weight: bold;
-  letter-spacing: 5px;
+  top: 220px;
+  left: 230px;
+  font-size: 20px;
+  color: rgba(231,237,210,1);
+  letter-spacing: 8px;
+}
+
+#start-button {
+  display: block;
+  position: absolute;
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0px;
   text-align: center;
-  width: 100px;
+  width: 200px;
   height: 50px;
   top: 270px;
-  left: 220px;
+  left: 170px;
   background-color: rgba(204,219,124,1);
   color: rgba(110,107,102,1);
   border-radius: 0.7em;
@@ -360,7 +375,7 @@
 /*END OF START PAGE*/
 /*WIN PAGE*/
 #win-page {
-  display: block;
+  display: hide;
 }
 
 #win-page-bg {
@@ -378,11 +393,12 @@
   position: absolute;
   font-family: helvetica, sans-serif;
   font-weight: bold;
-  top: 200px;
+  top: 100px;
   left: 60px;
-  font-size: 30px;
+  font-size: 20px;
   color: rgba(231,237,187,1);
   letter-spacing: 0px;
+  text-align: center;
 }
 
 #win-page button {
@@ -404,7 +420,6 @@
 /*END OF WIN PAGE*/
 /*LOSE PAGE*/
 #lose-page {
-  display: block;
 }
 
 #lose-page-bg {

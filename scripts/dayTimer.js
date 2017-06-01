@@ -35,10 +35,8 @@ function timer(duration, secondsPassed){
     document.getElementById('player1-timer').innerHTML = "00:0" + duration;
   };
 
-  if(duration <= 0) {
+  if(duration <= 0 && gameState == "gameOn") {
     document.getElementById('player1-timer').innerHTML = "END";
-    /*trigger lose game condition*/
-    gameState = "gameOff";
     loseGame();
   };
 };
