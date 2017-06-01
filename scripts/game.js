@@ -28,8 +28,8 @@ var Game = function() {
     //new object of an enemy, start_position, direction, every time, if it is 0 go minus, velocity
 
     // Window settings
-    var assets = [];                              // All game objects
-    var player = new Moped(settings);             // The player
+    var assets = [];                      // All game objects
+    var player = new Moped(settings);     // The player
     assets[0] = player;
     assets[1] = new Restaurant();         // The restaurant
     var frame = 0;                        // Frames since the start of the game

@@ -19,9 +19,9 @@ var DeliveryVenue = function(){
 };
 
 //WIP, not tested - getting random times for the deliveryVenues
-var deliveryTimers = {};
-deliveryTimers.A = {};
-deliveryTimers.A.randomDuration = 30;
+// var deliveryTimers = {};
+// deliveryTimers.A = {};
+// deliveryTimers.A.randomDuration = 30;
 
 function timerD1(duration, secondsPassed){
   duration = duration - Math.floor(secondsPassed);
@@ -44,9 +44,11 @@ function timerD1(duration, secondsPassed){
 };
 
 var randomDuration = {}; //called in the render loop in game.js
-randomDuration.d1 = Math.floor(Math.random()*10)+3;
-randomDuration.d2 = Math.floor(Math.random()*10)+3;
-randomDuration.d3 = Math.floor(Math.random()*10)+3;
+var randomDurationMin = 3;
+var randomDurationRange = 10;
+randomDuration.d1 = Math.floor(Math.random()*randomDurationRange)+randomDurationMin;
+randomDuration.d2 = Math.floor(Math.random()*randomDurationRange)+randomDurationMin;
+randomDuration.d3 = Math.floor(Math.random()*randomDurationRange)+randomDurationMin;
 
 function timerD2(duration, secondsPassed){
   duration = duration - Math.floor(secondsPassed);

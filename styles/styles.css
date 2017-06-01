@@ -94,6 +94,7 @@
 
   #cashOnHandTextBox span:first-child {
     left: 1px;
+    top: 4px;
   }
 
   #cashOnHandTextBox span:nth-child(2) {
