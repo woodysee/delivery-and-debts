@@ -39,9 +39,7 @@ function togglePause() {
 function winGame() {
   if (gameState = "gameOn"){
     gameState = "gameOff";
-    // console.log("Win Condition Test");
     startPage.style.display = "none";
-    //customPage.style.display = "none";
     winPage.style.display = "block";
     losePage.style.display = "none";
     playerSpace.style.display = "none";
@@ -51,9 +49,7 @@ function winGame() {
 function loseGame() {
   if (gameState = "gameOn"){
     gameState = "gameOff";
-    console.log("You have filed for bankruptcy. ---- Get a loan from your parents.");
     startPage.style.display = "none";
-    //customPage.style.display = "none";
     winPage.style.display = "none";
     losePage.style.display = "block";
     playerSpace.style.display = "none";
@@ -187,6 +183,7 @@ function fauxNav() {
       winPage.style.display = "none";
       losePage.style.display = "none";
       playerSpace.style.display = "none";
+      location.reload();
     }
     document.querySelector('#start-button').addEventListener('click', startGame);
     document.querySelector('#lose-retry-button').addEventListener('click', backHome);
@@ -201,5 +198,4 @@ function fauxNav() {
     };
   };
 };
-
 fauxNav();

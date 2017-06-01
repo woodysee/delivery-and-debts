@@ -5,21 +5,21 @@ Project 1 (2 June 2017)
 
 "DELIVERY AND DEBTS"
 
-This was made with HTML, CSS, Javascript & jQuery.
+This browser game was made with HTML, CSS, Javascript & jQuery.
 ___________________________________________________________
 
 INSTRUCTIONS
-
 ___________________________________________________________
 
 To start playing,
 
 1. Select index.html.
-2. Open index.html in either Chrome, Firefox or Safari. This web game was not tested in other browsers.
+2. Open index.html in your browser.
+    This browser game was tested with Google Chrome 58.0.3029.110 (64-bit), Mozilla Firefox 53.0.3 (64-bit), and Apple Safari Version 10.1.1 (12603.2.4).
 3. You will arrive at a green landing page with the game title "Delivery & Debts".
 4. Under Game, click the button "Play".
 
-    IMPORTANT
+    IMPORTANT:
     You will immediately begin playing after the click of the button. Please read the Game Rules FIRST below before commencing with the game.
 ___________________________________________________________
 
@@ -35,7 +35,7 @@ Bring the takings back to the restaurant so you can collect your 10% delivery co
 
 You lose if you are unable to repay your debt before lunch time ends (i.e. the default duration of 60 seconds).
 
-You lose if you willingly declare bankruptcy be clicking the red x square button on the top left hand corner of the screen.
+You lose if you willingly declare bankruptcy by clicking the red x square button on the top left hand corner of the screen.
 
 You win if you are able to repay your debt by the end of lunch time.
 
@@ -51,16 +51,17 @@ There are some settings available to change the difficulty of the game, which ca
 4. Under the settings object, there are a whole list of settings you can change to modify your experience with the game.
 
 Example of a safe modification of settings:
+  ___________________________________________________________
+  Before:
+  settings.mopedSpeed = 2;
 
-Before
-settings.mopedSpeed = 2;
-
-After
-settings.mopedSpeed = 1;
+  After:
+  settings.mopedSpeed = 1;
+  ___________________________________________________________
 
 5. You can change any of the values in the settings object.
 
-    IMPORTANT
+    IMPORTANT:
     Do not modify or delete anything else in game.js or in other JavaScript files, or the HTML or CSS. Otherwise, the game might not work.
 ___________________________________________________________
 
@@ -68,5 +69,5 @@ SPECIAL THANKS TO
 
 - Jens H. Nielsen - our instructor
 - Geng Sng & Iskandar Jamaluddin - our teaching assistants
-- Alex Min, Elnathan Erh, Bryan Lee & Choong Han Xiang - for their guidance with my hurdles of JavaScript
-- And most importantly all the students of GA's sg-wdi-10!
+- Alex Min, Elnathan Erh, Bryan Lee & Choong Han Xiang - for their patient guidance with my hurdles of JavaScript
+- And most importantly all the awesome students of GA's sg-wdi-10!
