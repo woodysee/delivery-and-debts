@@ -20,12 +20,14 @@ var gameState = "gameOff";
 
 //Game State - Global Variables
 var startPage = document.getElementById("start-page");
+var customPage = document.getElementById("custom-page");
 var winPage = document.getElementById("win-page");
 var losePage = document.getElementById("lose-page");
 var playerSpace = document.getElementById("player1-space");
 
 //Display Start Page - Initial Landing Page
 startPage.style.display = "block";
+customPage.style.display = "none";
 winPage.style.display = "none";
 losePage.style.display = "none";
 playerSpace.style.display = "none";
@@ -34,6 +36,7 @@ playerSpace.style.display = "none";
 function winGame() {
     gameState = "gameOff";
     startPage.style.display = "none";
+    customPage.style.display = "none";
     winPage.style.display = "block";
     losePage.style.display = "none";
     playerSpace.style.display = "none";
@@ -42,6 +45,7 @@ function winGame() {
 function loseGame() {
     gameState = "gameOff";
     startPage.style.display = "none";
+    customPage.style.display = "none";
     winPage.style.display = "none";
     losePage.style.display = "block";
     playerSpace.style.display = "none";
@@ -124,9 +128,9 @@ var Game = function() {
         };
       });
 
-      document.querySelector('#closegame-button').addEventListener('click', closeGame);
+      document.querySelector('#closegame-button').addEventListener('click', closeGame); //Close game button on top left (Bankruptcy)
 
-      //Add more event listeners
+      //Add more event listeners here
 
     };
     // Startup the game
@@ -136,18 +140,17 @@ var Game = function() {
     };
 
     // The render function. It will be called 60/sec
-    this.render = function(){ // Change to this.render
+    this.render = function(){
       for(var i = 0; i < assets.length; i++){
         assets[i].render(interactions);
-        // Don't put a "return secondsPassed" here if you want the timer to work... (30 May 2017, 11:27);
         timer(settings.dayLength, secondsPassed); //See dayTimer.js
       };
       secondsPassed = frame / 60; //no. of seconds passed per frame
       frame++;
-      console.log(frame, secondsPassed); // - Checks render loop. Uncomment and see console to see log.
+      //console.log(frame, secondsPassed); // - Checks render loop. Uncomment and see console to see log.
     };
 
-    var self = this; // Add this line
+    var self = this;
     window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       ||
               window.webkitRequestAnimationFrame ||
@@ -159,7 +162,7 @@ var Game = function() {
 
             (function animloop(){
               requestAnimFrame(animloop);
-              self.render(); // add self before render
+              self.render();
             })();
 
             init();
@@ -171,18 +174,25 @@ function fauxNav() {
   if (gameState = "gameOff") {
     function backHome() {
       location.reload();
-      startPage.style.display = "block";
-      // winPage.style.display = "none";
-      // losePage.style.display = "none";
-      // playerSpace.style.display = "none";
     }
-    document.querySelector('#start-button').addEventListener('click', startGame);
+    document.querySelector('#start-button').addEventListener('click', customGame);
+    document.querySelector('#custom-page-button').addEventListener('click', startGame);
     document.querySelector('#lose-retry-button').addEventListener('click', backHome);
     document.querySelector('#win-retry-button').addEventListener('click', backHome);
+    function customGame() {
+      gameState = "gameOn";
+      startPage.style.display = "none";
+      customPage.style.display = "block";
+      winPage.style.display = "none";
+      losePage.style.display = "none";
+      playerSpace.style.display = "none";
+      //console.log("test start button");
+    };
     function startGame() {
       new Game();
       gameState = "gameOn";
       startPage.style.display = "none";
+      customPage.style.display = "none";
       winPage.style.display = "none";
       losePage.style.display = "none";
       playerSpace.style.display = "block";
