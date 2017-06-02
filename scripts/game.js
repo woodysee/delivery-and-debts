@@ -169,7 +169,7 @@ var Game = function() {
 };
 /*End Game*/
 
-//Game Off Buttons
+//Navigate between win/lose/start faux pages before and after game
 function fauxNav() {
   if (gameState = "gameOff") {
     function backHome() {
@@ -200,4 +200,5 @@ function fauxNav() {
     };
   };
 };
+
 fauxNav();
