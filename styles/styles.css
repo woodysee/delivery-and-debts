@@ -47,6 +47,7 @@
   margin: 0px 0px 0px 0px;
   padding: 2px 2px 2px 2px;
   background-color: rgba(110, 107, 102, 0.4);
+  font-family: helvetica, sans-serif;
   position: absolute;
   top: 10px;
   left: 130px;
@@ -56,6 +57,7 @@
   font-size: 10px;
   color: rgba(255,251,219,1);
   padding: 1px 1px 1px 1px;
+  font-family: helvetica, sans-serif;
   position: absolute;
   top: 0px;
 }
@@ -83,10 +85,10 @@
 }
   #cashOnHandTextBox span {
     font-size: 10px;
+    font-family: helvetica, sans-serif;
     color: rgba(255,251,219,1);
     padding: 1px 1px 1px 1px;
     position: absolute;
-    top: 5px;
   }
 
   #cashOnHandTextBox span:first-child {
@@ -108,7 +110,7 @@
   top: 160px;
   left: 15px;
   border-radius: 0%;
-  display: inline-block; /*Recommendation from Dionne -- not sure if it will work?*/
+  display: block;
 }
 
 .delivery-venue-locations {
@@ -255,6 +257,7 @@
   height: 60px;
   top: 394px;
   left: 30px;
+  font-family: helvetica, sans-serif;
   position: absolute;
   background-color: rgba(110, 107, 102, 1);
 }
