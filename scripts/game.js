@@ -61,7 +61,7 @@ var Game = function() {
     settings.minlunchCost = 10;/*dollar(s)*/  // The price of delivering lunches to a single venue
     settings.randomlunchRange = 50;
     settings.initEarnings = 30;/*negative dollar(s)*/
-    settings.dayLength = 10;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
+    settings.dayLength = 60;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
 
     // Window settings
     var assets = [];                      // All game objects
