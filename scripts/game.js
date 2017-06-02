@@ -30,30 +30,21 @@ winPage.style.display = "none";
 losePage.style.display = "none";
 playerSpace.style.display = "none";
 
-//WIP: pause button
-function togglePause() {
-  console.log("Toggle pause with space bar");
-};
-
 //Win-lose conditions
 function winGame() {
-  if (gameState = "gameOn"){
     gameState = "gameOff";
     startPage.style.display = "none";
     winPage.style.display = "block";
     losePage.style.display = "none";
     playerSpace.style.display = "none";
-  };
 };
 
 function loseGame() {
-  if (gameState = "gameOn"){
     gameState = "gameOff";
     startPage.style.display = "none";
     winPage.style.display = "none";
     losePage.style.display = "block";
     playerSpace.style.display = "none";
-  };
 };
 
 var Game = function() {
@@ -66,7 +57,7 @@ var Game = function() {
     settings.minlunchCost = 10;/*dollar(s)*/  // The price of delivering lunches to a single venue
     settings.randomlunchRange = 50;
     settings.initEarnings = 30;/*negative dollar(s)*/
-    settings.dayLength = 60;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
+    settings.dayLength = 10;/*seconds*/    // Duration of a day (has to be between 0 - 600 seconds)
 
     // Window settings
     var assets = [];                      // All game objects
@@ -153,7 +144,7 @@ var Game = function() {
       };
       secondsPassed = frame / 60; //no. of seconds passed per frame
       frame++;
-      // console.log(frame, secondsPassed); // - Checks render loop. Uncomment and see console to see log.
+      console.log(frame, secondsPassed); // - Checks render loop. Uncomment and see console to see log.
     };
 
     var self = this; // Add this line
@@ -179,17 +170,18 @@ var Game = function() {
 function fauxNav() {
   if (gameState = "gameOff") {
     function backHome() {
-      startPage.style.display = "block";
-      winPage.style.display = "none";
-      losePage.style.display = "none";
-      playerSpace.style.display = "none";
       location.reload();
+      startPage.style.display = "block";
+      // winPage.style.display = "none";
+      // losePage.style.display = "none";
+      // playerSpace.style.display = "none";
     }
     document.querySelector('#start-button').addEventListener('click', startGame);
     document.querySelector('#lose-retry-button').addEventListener('click', backHome);
     document.querySelector('#win-retry-button').addEventListener('click', backHome);
     function startGame() {
       new Game();
+      gameState = "gameOn";
       startPage.style.display = "none";
       winPage.style.display = "none";
       losePage.style.display = "none";

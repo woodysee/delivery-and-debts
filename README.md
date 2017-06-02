@@ -5,7 +5,6 @@ Project 1 (2 June 2017)
 
 "DELIVERY AND DEBTS"
 
-This browser game was made with HTML, CSS, Javascript & jQuery.
 ___________________________________________________________
 
 INSTRUCTIONS
@@ -63,6 +62,12 @@ Example of a safe modification of settings:
 
     IMPORTANT:
     Do not modify or delete anything else in game.js or in other JavaScript files, or the HTML or CSS. Otherwise, the game might not work.
+
+___________________________________________________________
+
+REQUIREMENTS
+
+This browser game was made with HTML, CSS, Javascript, jQuery and Bootstrap. It also requires an Internet connection in order for the browser game to display properly.
 ___________________________________________________________
 
 SPECIAL THANKS TO
