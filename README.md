@@ -12,9 +12,8 @@ ___________________________________________________________
 
 To start playing,
 
-1. Select index.html.
-2. Open index.html in your browser.
-    This browser game was tested with Google Chrome 58.0.3029.110 (64-bit), Mozilla Firefox 53.0.3 (64-bit), and Apple Safari Version 10.1.1 (12603.2.4).
+1. Open this link: https://woodysee.github.io/sg-wdi-10-project-1/.
+    NB: This browser game was tested with Google Chrome 58.0.3029.110 (64-bit), Mozilla Firefox 53.0.3 (64-bit), and Apple Safari Version 10.1.1 (12603.2.4).
 3. You will arrive at a green landing page with the game title "Delivery & Debts".
 4. Under Game, click the button "Play".
 
@@ -61,7 +60,7 @@ Example of a safe modification of settings:
 5. You can change any of the values in the settings object.
 
     IMPORTANT:
-    Do not modify or delete anything else in game.js or in other JavaScript files, or the HTML or CSS. Otherwise, the game might not work.
+    Do not modify or delete anything else in game.js or in other JavaScript files, or the HTML or CSS. Otherwise, there will be no guarantee that the game will not work.
 
 ___________________________________________________________
 
