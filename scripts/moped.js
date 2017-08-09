@@ -90,7 +90,8 @@ var Moped = function(settings) {
       var bigElement = document.getElementById(bigRect);
 
       var ax = parseInt(smallElement.style.left);
-      var ay = parseInt(smallElement.style.top);
+      //var ay = parseInt(smallElement.style.top);
+      var ay = smallElement.getBoundingClientRect().top;
       var bx = parseInt(smallElement.style.left) + parseInt(smallElement.style.width);
       var by = parseInt(smallElement.style.top);
       var cx = parseInt(smallElement.style.left) + parseInt(smallElement.style.width);

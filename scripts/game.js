@@ -1,15 +1,4 @@
-/* A Document Ready in jQuery*/
-/* If you plan to use jQuery, have you inserted this just above </body> in your HTML?
-<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-*/
-
-$( document ).ready(function() {
-    console.log( "index.html linked to game.js. Printed with jQuery." );
-});
-
-/**/
-/*End of Document Ready Function in jQuery*/
-/**/
+console.log( "index.html linked to game.js." );
 
 /* ALL CODE SHOULD GO BELOW HERE */
 
@@ -152,7 +141,7 @@ var Game = function() {
 
     var self = this;
     window.requestAnimFrame = (function(){
-      return  window.requestAnimationFrame       ||
+      return  window.requestAnimationFrame       || //
               window.webkitRequestAnimationFrame ||
               window.mozRequestAnimationFrame    ||
               function( callback ){
@@ -174,7 +163,7 @@ function fauxNav() {
   if (gameState = "gameOff") {
     function backHome() {
       location.reload();
-    }
+    };
     document.querySelector('#start-button').addEventListener('click', customGame);
     document.querySelector('#custom-page-button').addEventListener('click', startGame);
     document.querySelector('#lose-retry-button').addEventListener('click', backHome);
