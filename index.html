@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Deliveries &amp; Debts</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="external/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 
-    <!-- Local CSS Below -->
+<head>
+  <title>Deliveries &amp; Debts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="external/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 
-    <link href="styles/styles.css" rel="stylesheet" media="screen" />
+  <!-- Local CSS Below -->
 
-    <!-- Local CSS Above -->
+  <link href="styles/styles.css" rel="stylesheet" media="screen" />
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Local CSS Above -->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
 
-  </head>
-  <body>
-    <!--ALL USER HTML CONTENT SHOULD GO BELOW THIS COMMENT-->
+</head>
+
+<body>
+  <!--ALL USER HTML CONTENT SHOULD GO BELOW THIS COMMENT-->
   <div id="player1">
     <div id="player1-space">
       <button id="closegame-button">
         <div id="x-text">X</div>
       </button>
       <div id="world">
-        <div id="restaurant"></div>
+        <div class="restaurant" id="restaurant"></div>
         <div id="moped">
         </div>
         <div class="delivery-venue-locations">
@@ -42,35 +44,51 @@
           <div id="deliveryB3"></div>
           <div id="deliveryC3"></div>
           <div class="delivery-venue" id="deliveryA">
-            OFFICE<br><br><br /><br />
+            OFFICE
+            <br />
+            <br />
+            <br />
+            <br />
             <span id="deliveryA-timer">
             </span>
           </div>
           <div class="delivery-venue" id="deliveryB">
-            OFFICE<br><br><br /><br />
-          <span id="deliveryB-timer">
-          </span>
+            OFFICE
+            <br />
+            <br />
+            <br />
+            <br />
+            <span id="deliveryB-timer">
+            </span>
           </div>
           <div class="delivery-venue" id="deliveryC">
-            OFFICE<br><br><br /><br />
-          <span id="deliveryC-timer">
-          </span>
+            OFFICE
+            <br />
+            <br />
+            <br />
+            <br />
+            <span id="deliveryC-timer">
+            </span>
           </div>
         </div>
       </div>
       <div id="player1-infobar">
-          <div id="player1-lunchtime">LUNCHTIME!</div>
-          <div id="player1-timer"></div>
-          <div id="lunchesOnHandTextBox">
-            <span>Lunches:</span><span id="lunchCount">NO</span>
-          </div>
-          <div id="cashOnHandTextBox">
-            <span>Takings: $</span><span id="cashCount">0</span>
-          </div>
-          <div id="player1-earningstext">Debt</div>
-          <div id="player1-earningsbox">$ <span id="player1-earnings">50</span></div>
+        <div id="player1-lunchtime">LUNCHTIME!</div>
+        <div id="player1-timer"></div>
+        <div id="lunchesOnHandTextBox">
+          <span>Lunches:</span>
+          <span id="lunchCount">NO</span>
+        </div>
+        <div id="cashOnHandTextBox">
+          <span>Takings: $</span>
+          <span id="cashCount">0</span>
+        </div>
+        <div id="player1-earningstext">Debt</div>
+        <div id="player1-earningsbox">$
+          <span id="player1-earnings">50</span>
+        </div>
       </div>
-    </div>
+    </div>  
 
     <div id="start-page">
       <div id="start-page-bg">
@@ -86,16 +104,24 @@
     <div id="custom-page" style="display: block">
       <div id="custom-page-bg">
         <div id="custom-title">
-        BACKSTORY
+          BACKSTORY
         </div>
         <p>
-          You play a delivery person delivering lunches.<br /><br />
-          You start as a small blue square on the top left.<br /><br />
-          Go to the restaurant to collect lunches first.<br /><br />
-          Then deliver lunches to an office.<br /><br />
-          Remember to deposit your takings back at the restaurant.<br /><br />
-          You only earn 10% commission from every taking.<br /><br />
-          Eliminate your debts before lunch time ends.<br /><br />
+          You play a delivery person delivering lunches.
+          <br />
+          <br /> You start as a small blue square on the top left.
+          <br />
+          <br /> Go to the restaurant to collect lunches first.
+          <br />
+          <br /> Then deliver lunches to an office.
+          <br />
+          <br /> Remember to deposit your takings back at the restaurant.
+          <br />
+          <br /> You only earn 10% commission from every taking.
+          <br />
+          <br /> Eliminate your debts before lunch time ends.
+          <br />
+          <br />
         </p>
         <button id="custom-page-button">
           PLAY
@@ -106,10 +132,14 @@
     <div id="win-page">
       <div id="win-page-bg">
         <div id="win-title">
-        By some miracle, you have cleared your debts.<br /><big>Congratulations!</big>
+          By some miracle, you have cleared your debts.
+          <br />
+          <big>Congratulations!</big>
         </div>
         <button id="win-retry-button">
-          Buy a sports car to celebrate!<br /><small>(Paid for by a high interest loan of course)</small>
+          Buy a sports car to celebrate!
+          <br />
+          <small>(Paid for by a high interest loan of course)</small>
         </button>
       </div>
     </div>
@@ -117,9 +147,11 @@
     <div id="lose-page">
       <div id="lose-page-bg">
         <div id="lose-title">
-        You were not able to pay your debts in time.
+          You were not able to pay your debts in time.
         </div>
-        <button id="lose-retry-button">Get a high interest loan and try again</button>
+        <button id="lose-retry-button">
+          Get a high interest loan and try again
+        </button>
       </div>
     </div>
 
@@ -140,5 +172,6 @@
 
     <!-- Local JavaScript files above here-->
   </div>
-  </body>
+</body>
+
 </html>

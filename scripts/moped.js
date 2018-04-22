@@ -40,6 +40,12 @@ var Moped = function(settings) {
     }
   };
 
+  function randomiseDeliveryVenues() {
+    console.log("delivery venues randomised");
+    const deliveryVenues = ["R1","R2","A1","A2","A3","B1","B2","B3","C1","C2","C3"];
+    
+  }
+
   function refillLunches() {
     if (mopedElement.lunches == false) {
       mopedElement.lunches = true;
@@ -98,10 +104,11 @@ var Moped = function(settings) {
       if ((Dy >= dy) && (dy >= Ay) && (Ax <= ax) && (bx <= Bx)) {
         smallElement.style.top = (Ay - parseInt(smallElement.style.height)) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped has hit NORTH of " + bigElement.id + ", an impassable object with class of " + bigElement.class + ".");
+        console.log("Moped has hit NORTH of " + bigElement.id + ", an impassable object with class of " + bigElement.classList[0] + ".");
         //Contextual consequences of hitting the object below
         if (bigElement.id == "restaurant") {
           refillLunches();
+          randomiseDeliveryVenues();
         };
         /**/
         if (bigElement.classList[0] == "delivery-venue") {
@@ -115,7 +122,7 @@ var Moped = function(settings) {
         smallElement.style.left = Bx + "px";
         //ax = Bx + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped has hit EAST of " + bigElement.id + ", an impassable object with class of " + bigElement.class + ".");
+        console.log("Moped has hit EAST of " + bigElement.id + ", an impassable object with class of " + bigElement.classList[0] + ".");
 
         //Contextual consequences of hitting the object below
         if (bigElement.id == "restaurant") {
@@ -132,7 +139,7 @@ var Moped = function(settings) {
       if ((By <= by) && (by <= Cy) && (cx <= Cx) && (Dx <= dx)) {
         smallElement.style.top = Cy + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped has hit SOUTH of " + bigElement.id + ", an impassable object with class of " + bigElement.class + ".");
+        console.log("Moped has hit SOUTH of " + bigElement.id + ", an impassable object with class of " + bigElement.classList[0] + ".");
         //Contextual consequences of hitting the object below
         if (bigElement.id == "restaurant") {
           refillLunches();
@@ -149,7 +156,7 @@ var Moped = function(settings) {
         //cx = Dx;
         smallElement.style.left = parseInt(bigElement.style.left) - parseInt(smallElement.style.width) + "px";
         //document.body.bigElement.style.backgroundColor = 'rgba(' + 84 + ',' + 135 + ',' + 107 + 1 + ')';
-        console.log("Moped has hit WEST of " + bigElement.id + ", an impassable object with class of " + bigElement.class + ".");
+        console.log("Moped has hit WEST of " + bigElement.id + ", an impassable object with class of " + bigElement.classList[0] + ".");
         //Contextual consequences of hitting the object below
         if (bigElement.id == "restaurant") {
           refillLunches();
