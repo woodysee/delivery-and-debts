@@ -228,6 +228,8 @@
   padding: 3px 3px 3px 3px;
   text-align: center;
   /*all top, left, height, width is defined in init*/
+  top: -1000px;
+  left: -1000px;
 }
 
 #deliveryB {
@@ -239,6 +241,8 @@
   padding: 3px 3px 3px 3px;
   text-align: center;
   /*all top, left, height, width is defined in init*/
+  top: -1000px;
+  left: -1000px;
 }
 
 #deliveryC {
@@ -250,6 +254,8 @@
   padding: 3px 3px 3px 3px;
   text-align: center;
   /*all top, left, height, width is defined in init*/
+  top: -1000px;
+  left: -1000px;
 }
 
 #player1-infobar {

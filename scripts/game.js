@@ -51,6 +51,9 @@ var Game = function () {
   settings.initEarnings = 30; /*negative dollar(s)*/
   settings.dayLength = 60; /*seconds*/ // Duration of a day (has to be between 0 - 600 seconds)
 
+  // Game state
+  settings.restaurantVisits = 0;
+
   // Window settings
   var assets = []; // All game objects
   var player = new Moped(settings); // The player
@@ -178,7 +181,6 @@ var Game = function () {
   // Startup the game
   function init() {
     runGame();
-    createDeliveryVenues();
     setupGameEvents();
   }
 
